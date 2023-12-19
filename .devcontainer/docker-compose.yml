@@ -1,6 +1,6 @@
 version: "3.9"
 services:
-  xp-frontend-repo-template:
+  rn-vite-tauri-workshop:
     environment:
       GH_TOKEN: ${GH_TOKEN}
     volumes:
@@ -24,12 +24,12 @@ services:
 
 volumes:
   vscode-extensions:
-    name: xp-frontend-repo-template-vscode-extensions
+    name: rn-vite-tauri-workshop-vscode-extensions
   vscode-extensions-insiders:
-    name: xp-frontend-repo-template-vscode-extensions-insiders
+    name: rn-vite-tauri-workshop-vscode-extensions-insiders
   ccache:
-    name: xp-frontend-repo-template-ccache
+    name: rn-vite-tauri-workshop-ccache
   gradle:
-    name: xp-frontend-repo-template-gradle
+    name: rn-vite-tauri-workshop-gradle
   android:
-    name: xp-frontend-repo-template-android
+    name: rn-vite-tauri-workshop-android

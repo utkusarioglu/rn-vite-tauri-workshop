@@ -1,5 +1,5 @@
 {
-  "name": "xp-frontend-repo-template.templates.utkusarioglu.com",
+  "name": "rn-vite-tauri-workshop.workshops.utkusarioglu.com",
   "packageManager": "yarn@4.0.2",
   "workspaces": [
     "apps/*",

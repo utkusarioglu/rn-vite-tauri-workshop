@@ -5,7 +5,7 @@ const fs = require("node:fs");
 const queryString = require("node:querystring");
 
 const CERT_PATH =
-  "/utkusarioglu-com/templates/xp-frontend-repo-template/.certs.local/mock-server";
+  "/utkusarioglu-com/workshops/rn-vite-tauri-workshop/.certs.local/mock-server";
 
 const PORT = 443;
 

@@ -784,6 +784,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rn-vite-tauri-workshop.workshops.utkusarioglu.com@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "rn-vite-tauri-workshop.workshops.utkusarioglu.com@workspace:."
+  dependencies:
+    eslint: "npm:^8.56.0"
+    prettier: "npm:^3.1.1"
+    turbo: "npm:^1.11.2"
+  languageName: unknown
+  linkType: soft
+
 "run-parallel@npm:^1.1.9":
   version: 1.2.0
   resolution: "run-parallel@npm:1.2.0"
@@ -954,16 +964,6 @@ __metadata:
   checksum: 159da4805f7e84a3d003d8841557196034155008f817172d4e986bd591f74aa82aa7db55929a54222309e01079a65a92a9e6414da5a6aa4b01ee44a511ac3ee5
   languageName: node
   linkType: hard
-
-"xp-frontend-repo-template.templates.utkusarioglu.com@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "xp-frontend-repo-template.templates.utkusarioglu.com@workspace:."
-  dependencies:
-    eslint: "npm:^8.56.0"
-    prettier: "npm:^3.1.1"
-    turbo: "npm:^1.11.2"
-  languageName: unknown
-  linkType: soft
 
 "yocto-queue@npm:^0.1.0":
   version: 0.1.0

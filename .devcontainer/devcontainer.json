@@ -1,11 +1,11 @@
 {
-  "name": "xp-frontend-repo-template.templates.utkusarioglu.com",
+  "name": "rn-vite-tauri-workshop.workshops.utkusarioglu.com",
   "dockerComposeFile": [
     "../.docker/docker-compose.dev.yml",
     "docker-compose.yml"
   ],
-  "service": "xp-frontend-repo-template",
-  "workspaceFolder": "/utkusarioglu-com/templates/xp-frontend-repo-template",
+  "service": "rn-vite-tauri-workshop",
+  "workspaceFolder": "/utkusarioglu-com/workshops/rn-vite-tauri-workshop",
   "customizations": {
     "vscode": {
       "extensions": [

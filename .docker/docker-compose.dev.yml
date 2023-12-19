@@ -1,10 +1,10 @@
 version: "3.9"
 
 services:
-  xp-frontend-repo-template:
+  rn-vite-tauri-workshop:
     image: utkusarioglu/react-native-android-devcontainer:1.0.18
     environment:
-      PROJECT_ROOT_ABSPATH: /utkusarioglu-com/templates/xp-frontend-repo-template
+      PROJECT_ROOT_ABSPATH: /utkusarioglu-com/workshops/rn-vite-tauri-workshop
       ANDROID_TARGET_DEVICE: 192.168.1.151:58526
     # extra_hosts:
     #   android-host: host-gateway
@@ -15,4 +15,4 @@ services:
     volumes:
       - type: bind
         source: ..
-        target: /utkusarioglu-com/templates/xp-frontend-repo-template
+        target: /utkusarioglu-com/workshops/rn-vite-tauri-workshop
