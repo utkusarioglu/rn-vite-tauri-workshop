@@ -1,0 +1,27 @@
+{
+  "name": "xp-frontend-repo-template.templates.utkusarioglu.com",
+  "dockerComposeFile": [
+    "../.docker/docker-compose.dev.yml",
+    "docker-compose.yml"
+  ],
+  "service": "xp-frontend-repo-template",
+  "workspaceFolder": "/utkusarioglu-com/templates/xp-frontend-repo-template",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "msjsdiag.vscode-react-native",
+        "vscjava.vscode-java-pack",
+        "esbenp.vscode-prettier",
+        "esbenp.prettier-vscode",
+        "ms-azuretools.vscode-docker"
+      ],
+      "settings": {
+        "workbench.colorCustomizations": {
+          "activityBar.background": "#1c0041",
+          "activityBar.foreground": "#FFF"
+        }
+      }
+    }
+  },
+  "postCreateCommand": "scripts/post-create-command.sh"
+}
