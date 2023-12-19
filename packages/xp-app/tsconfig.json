@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "baseUrl": ".",
+    "jsx": "react-jsx",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "isolatedModules": true,
+  },
+  "include": ["src"],
+  "exclude": ["dist", "build", "node_modules"]
+}
