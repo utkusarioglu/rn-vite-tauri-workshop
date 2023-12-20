@@ -24,7 +24,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from "react-native/Libraries/NewAppScreen";
-import XpApp from "xp-app";
+import {XpApp} from "xp-app";
 
 type SectionProps = PropsWithChildren<{
   title: string;

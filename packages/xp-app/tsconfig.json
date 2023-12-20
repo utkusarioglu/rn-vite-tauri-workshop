@@ -7,6 +7,6 @@
     "emitDeclarationOnly": true,
     "isolatedModules": true,
   },
-  "include": ["src"],
+  "include": ["src/XpApp.tsx"],
   "exclude": ["dist", "build", "node_modules"]
 }
