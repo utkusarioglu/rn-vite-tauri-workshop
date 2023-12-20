@@ -1,6 +1,12 @@
 {
-  "extends": "../../@react-native/typescript-config/tsconfig.json",
+  "extends": "../../node_modules/@react-native/typescript-config/tsconfig.json",
   "compilerOptions": {
-    "baseUrl": "."
-  }
+    "baseUrl": ".",
+    "paths": {
+      "xp-app/*": ["../../packages/xp-app/*"]
+    }
+  },
+  "references": [
+    { "path": "../../packages/xp-app"}
+  ]
 }
