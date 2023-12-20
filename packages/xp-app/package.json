@@ -1,7 +1,7 @@
 {
   "name": "xp-app",
-  "main": "./src/index.tsx",
-  "types": "./src/index.tsx",
+  "main": "./src/XpApp.tsx",
+  "types": "./src/XpApp.tsx",
   "devDependencies": {
     "@babel/preset-typescript": "^7.23.3",
     "@jest/globals": "^29.7.0",
