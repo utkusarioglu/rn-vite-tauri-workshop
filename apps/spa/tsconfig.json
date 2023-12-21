@@ -22,7 +22,7 @@
     "noFallthroughCasesInSwitch": true,
     "paths": {
       "xp-app": ["../../packages/xp-app"],
-      "elements": ["../../packages/xp-app"]
+      "elements": ["../../packages/elements"]
     }
   },
   "include": ["src"],
