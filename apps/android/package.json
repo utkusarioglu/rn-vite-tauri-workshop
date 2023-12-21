@@ -1,6 +1,5 @@
 {
   "name": "android.rn-vite-tauri-workshop.workshops.utkusarioglu.com",
-  "type": "module",
   "version": "0.0.1",
   "private": true,
   "scripts": {
