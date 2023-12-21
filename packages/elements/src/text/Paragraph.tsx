@@ -1,3 +1,5 @@
+import { Text } from "@tamagui/core";
+
 export const Paragraph = () => {
-  return <p>hello from elements</p>
-}
+  return <Text>hello from elements Text</Text>;
+};

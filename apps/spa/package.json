@@ -2,7 +2,6 @@
   "name": "spa.rn-vite-tauri-workshop.workshops.utkusarioglu.com",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -10,11 +9,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "elements": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "xp-app": "workspace:*"
   },
   "devDependencies": {
+    "@tamagui/config": "^1.79.13",
+    "@tamagui/core": "^1.79.13",
+    "@tamagui/vite-plugin": "^1.79.13",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@typescript-eslint/eslint-plugin": "^6.14.0",
