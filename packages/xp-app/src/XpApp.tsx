@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Paragraph } from "elements";
 // import reactLogo from "./assets/react.svg";
 // import viteLogo from "/vite.svg";
 
@@ -8,6 +9,7 @@ export function XpApp() {
 
   return (
     <>
+      <Paragraph />
       {/* <Text>hello</Text> */}
       {/* <div>
         <a href="https://vitejs.dev" target="_blank">
