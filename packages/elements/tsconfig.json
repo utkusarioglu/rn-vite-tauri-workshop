@@ -6,15 +6,7 @@
     "declaration": true,
     "emitDeclarationOnly": true,
     "isolatedModules": true,
-    "paths": {
-      "elements": ["../../packages/elements"]
-    }
   },
   "include": ["src"],
-  "exclude": ["dist", "build", "node_modules"],
-  "references": [
-    {
-      "path": "../../packages/elements"
-    }
-  ]
+  "exclude": ["dist", "build", "node_modules"]
 }

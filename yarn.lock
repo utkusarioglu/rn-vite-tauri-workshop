@@ -4567,6 +4567,14 @@ __metadata:
   languageName: node
   linkType: hard
 
+"elements@workspace:*, elements@workspace:packages/elements":
+  version: 0.0.0-use.local
+  resolution: "elements@workspace:packages/elements"
+  peerDependencies:
+    react: "*"
+  languageName: unknown
+  linkType: soft
+
 "emittery@npm:^0.13.1":
   version: 0.13.1
   resolution: "emittery@npm:0.13.1"
@@ -10174,6 +10182,7 @@ __metadata:
   dependencies:
     "@babel/preset-typescript": "npm:^7.23.3"
     "@jest/globals": "npm:^29.7.0"
+    elements: "workspace:*"
     jest: "npm:^29.7.0"
   peerDependencies:
     react: "*"
