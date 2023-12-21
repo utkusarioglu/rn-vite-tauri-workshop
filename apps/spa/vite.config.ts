@@ -18,7 +18,7 @@ export default defineConfig({
   ].filter(Boolean),
 
   optimizeDeps: {
-    include: ["xp-app", "elements"],
+    include: ["xp-app", "elements", "tamagui"],
   },
   build: {
     commonjsOptions: {

@@ -1,15 +1,16 @@
-import { useState } from "react";
-import { Paragraph } from "elements";
+// import { useState } from "react";
+import { Paragraph, DefaultButton } from "elements";
 // import reactLogo from "./assets/react.svg";
 // import viteLogo from "/vite.svg";
 
 export function XpApp() {
-  const [count, setCount] = useState(0);
-  console.log("hello");
+  // const [count, setCount] = useState(0);
+  // console.log("hello");
 
   return (
     <>
       <Paragraph>aaa2</Paragraph>
+      <DefaultButton>hl</DefaultButton>
       {/* <Text>hello</Text> */}
       {/* <div>
         <a href="https://vitejs.dev" target="_blank">
