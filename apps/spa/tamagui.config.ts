@@ -1,9 +1,4 @@
-import { config } from "@tamagui/config/v2";
-import { createTamagui } from "@tamagui/core";
-
-const tamaguiBaseConfig = {
-  ...config,
-};
+import { createTamagui, tamaguiBaseConfig } from "elements";
 
 const spaTamaguiConfig = createTamagui(tamaguiBaseConfig);
 

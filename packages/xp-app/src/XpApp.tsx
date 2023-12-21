@@ -9,7 +9,7 @@ export function XpApp() {
 
   return (
     <>
-      <Paragraph />
+      <Paragraph>aaa2</Paragraph>
       {/* <Text>hello</Text> */}
       {/* <div>
         <a href="https://vitejs.dev" target="_blank">

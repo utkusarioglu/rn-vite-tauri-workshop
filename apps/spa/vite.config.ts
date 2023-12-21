@@ -1,7 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { tamaguiExtractPlugin, tamaguiPlugin } from "@tamagui/vite-plugin";
-// import { spaTamaguiConfig } from "./tamagui.config";
 
 const shouldExtract = process.env.EXTRACT === "1";
 
@@ -19,12 +18,12 @@ export default defineConfig({
   ].filter(Boolean),
 
   optimizeDeps: {
-    include: ["xp-app"],
+    include: ["xp-app", "elements"],
   },
   build: {
     commonjsOptions: {
       // include: [/xp-app/],
-      include: [/xp-app/],
+      include: [/xp-app/, /elements/],
     },
   },
 });
