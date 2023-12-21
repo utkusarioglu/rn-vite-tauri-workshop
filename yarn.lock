@@ -10478,8 +10478,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "spa.rn-vite-tauri-workshop.workshops.utkusarioglu.com@workspace:apps/spa"
   dependencies:
-    "@tamagui/config": "npm:^1.79.13"
-    "@tamagui/core": "npm:^1.79.13"
     "@tamagui/vite-plugin": "npm:^1.79.13"
     "@types/react": "npm:^18.2.43"
     "@types/react-dom": "npm:^18.2.17"

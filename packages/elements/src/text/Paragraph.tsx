@@ -1,5 +1,10 @@
+import type { FC, PropsWithChildren } from "react";
 import { Text } from "@tamagui/core";
 
-export const Paragraph = () => {
-  return <Text>hello from elements Text</Text>;
+interface ParagraphProps {}
+
+export const Paragraph: FC<PropsWithChildren<ParagraphProps>> = ({
+  children,
+}) => {
+  return <Text>{children}</Text>;
 };
