@@ -2,8 +2,10 @@
   "name": "elements",
   "main": "./src/exports.ts",
   "types": "./src/exports.ts",
-  "peerDependencies": {
-    "react": "*"
+  "type": "module",
+  "exports": {
+    ".": "./src",
+    "./css-reset": "./src/css-reset"
   },
   "scripts": {
     "test": "jest"
@@ -11,5 +13,10 @@
   "dependencies": {
     "@tamagui/config": "^1.79.13",
     "tamagui": "^1.79.13"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*",
+    "react-native": "*"
   }
 }

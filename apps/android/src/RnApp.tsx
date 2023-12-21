@@ -6,7 +6,7 @@
  */
 
 import React from "react";
-import type {PropsWithChildren} from "react";
+import type { PropsWithChildren } from "react";
 import {
   SafeAreaView,
   ScrollView,
@@ -24,39 +24,45 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from "react-native/Libraries/NewAppScreen";
-import {XpApp} from "xp-app";
+import { XpApp } from "xp-app";
+import { ElementsProvider } from "elements";
+import androidTamaguiConfig from "../tamagui.config";
 
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
 
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === "dark";
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
+// function Section({ children, title }: SectionProps): React.JSX.Element {
+//   const isDarkMode = useColorScheme() === "dark";
+//   return (
+//     <View style={styles.sectionContainer}>
+//       <Text
+//         style={[
+//           styles.sectionTitle,
+//           {
+//             color: isDarkMode ? Colors.white : Colors.black,
+//           },
+//         ]}>
+//         {title}
+//       </Text>
+//       <Text
+//         style={[
+//           styles.sectionDescription,
+//           {
+//             color: isDarkMode ? Colors.light : Colors.dark,
+//           },
+//         ]}>
+//         {children}
+//       </Text>
+//     </View>
+//   );
+// }
 
-function Vanilla(): React.JSX.Element {
+/**
+ * @dev
+ * 1- TODO Tamagui type mismatch
+ */
+function RnApp(): React.JSX.Element {
   const isDarkMode = useColorScheme() === "dark";
 
   const backgroundStyle = {
@@ -65,11 +71,14 @@ function Vanilla(): React.JSX.Element {
 
   return (
     <SafeAreaView style={backgroundStyle}>
-      <StatusBar
+      {/* @ts-ignore */}
+      <ElementsProvider config={androidTamaguiConfig}>
+        <XpApp />
+      </ElementsProvider>
+      {/* <StatusBar
         barStyle={isDarkMode ? "light-content" : "dark-content"}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      <XpApp />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
@@ -93,7 +102,7 @@ function Vanilla(): React.JSX.Element {
           </Section>
           <LearnMoreLinks />
         </View>
-      </ScrollView>
+      </ScrollView> */}
     </SafeAreaView>
   );
 }
@@ -117,4 +126,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Vanilla;
+export default RnApp;

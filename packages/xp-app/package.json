@@ -2,6 +2,7 @@
   "name": "xp-app",
   "main": "./src/XpApp.tsx",
   "types": "./src/XpApp.tsx",
+  "type": "module",
   "devDependencies": {
     "@babel/preset-typescript": "^7.23.3",
     "@jest/globals": "^29.7.0",

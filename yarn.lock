@@ -3288,6 +3288,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tamagui/babel-plugin@npm:^1.79.13":
+  version: 1.79.13
+  resolution: "@tamagui/babel-plugin@npm:1.79.13"
+  dependencies:
+    "@babel/generator": "npm:^7.23.3"
+    "@babel/helper-plugin-utils": "npm:^7.22.5"
+    "@babel/template": "npm:^7.22.15"
+    "@babel/traverse": "npm:^7.23.3"
+    "@tamagui/simple-hash": "npm:1.79.13"
+    "@tamagui/static": "npm:1.79.13"
+  checksum: ee5e9136b98c8e3f3b66c6d655f6ad0b3935f21e2b0222afee7198496c5007809aed9a09b94a471206dddf449806a4a4f34ee49572b679de700d63c0abbbe23f
+  languageName: node
+  linkType: hard
+
 "@tamagui/build@npm:1.79.13":
   version: 1.79.13
   resolution: "@tamagui/build@npm:1.79.13"
@@ -5039,9 +5053,11 @@ __metadata:
     "@react-native/eslint-config": "npm:^0.73.1"
     "@react-native/metro-config": "npm:^0.73.2"
     "@react-native/typescript-config": "npm:^0.73.1"
+    "@tamagui/babel-plugin": "npm:^1.79.13"
     "@types/react": "npm:^18.2.6"
     "@types/react-test-renderer": "npm:^18.0.0"
     babel-jest: "npm:^29.6.3"
+    elements: "workspace:*"
     eslint: "npm:^8.19.0"
     jest: "npm:^29.6.3"
     prettier: "npm:2.8.8"
@@ -6274,6 +6290,8 @@ __metadata:
     tamagui: "npm:^1.79.13"
   peerDependencies:
     react: "*"
+    react-dom: "*"
+    react-native: "*"
   languageName: unknown
   linkType: soft
 
