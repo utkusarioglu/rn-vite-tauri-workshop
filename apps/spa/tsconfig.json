@@ -21,12 +21,14 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "xp-app/*": ["../../packages/xp-app/*"]
+      "xp-app": ["../../packages/xp-app"],
+      "elements": ["../../packages/xp-app"]
     }
   },
   "include": ["src"],
   "references": [
     { "path": "./tsconfig.node.json" },
-    { "path": "../../packages/xp-app" }
+    { "path": "../../packages/xp-app" },
+    { "path": "../../packages/elements" }
   ]
 }
