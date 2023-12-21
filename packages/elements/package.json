@@ -4,7 +4,7 @@
   "types": "./src/exports.ts",
   "type": "module",
   "exports": {
-    ".": "./src",
+    ".": "./src/exports",
     "./css-reset": "./src/css-reset"
   },
   "scripts": {
