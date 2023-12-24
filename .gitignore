@@ -47,3 +47,5 @@ yarn-error.log*
 apps/*/.certs
 .certs
 .certs.*
+
+*/*/tsconfig.tsbuildinfo

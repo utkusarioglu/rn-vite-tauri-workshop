@@ -5,15 +5,19 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc --build && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
+    "elements": "workspace:*",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tsconfig": "workspace:*",
+    "xp-app": "workspace:*"
   },
   "devDependencies": {
+    "@tamagui/vite-plugin": "^1.79.17",
     "@tauri-apps/cli": "^1.5.9",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",

@@ -1,11 +1,18 @@
 {
   "name": "elements",
-  "main": "./src/exports.ts",
-  "types": "./src/exports.ts",
+  "private": true,
+  "version": "0.0.0",
   "type": "module",
+  "main": "src/exports.mts",
+  "module": "src/exports.mts",
+  "types": "types/src/exports.d.mts",
   "exports": {
-    ".": "./src/exports",
-    "./css-reset": "./src/css-reset"
+    ".": {
+      "import": "./src/exports.mts"
+    },
+    "./css-reset": {
+      "import": "./src/css-reset.mts"
+    }
   },
   "scripts": {
     "test": "jest"
@@ -18,5 +25,9 @@
     "react": "*",
     "react-dom": "*",
     "react-native": "*"
+  },
+  "devDependencies": {
+    "tsconfig": "workspace:*",
+    "typescript": "^5.3.3"
   }
 }

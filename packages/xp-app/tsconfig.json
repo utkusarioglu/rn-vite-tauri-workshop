@@ -1,11 +1,25 @@
 {
+  "extends": "tsconfig/tsconfig.package.json",
   "compilerOptions": {
-    "composite": true,
     "baseUrl": ".",
-    "jsx": "react-jsx",
-    "declaration": true,
-    "emitDeclarationOnly": true,
-    "isolatedModules": true,
+    "outDir": "dist",
+    "skipLibCheck": true,
+
+    // "composite": true,
+    // "jsx": "react-jsx",
+    // "declaration": true,
+    // "emitDeclarationOnly": true,
+    // "declarationDir": "types",
+
+    // "isolatedModules": true,
+    // "esModuleInterop": true,
+    // "skipLibCheck": true,
+    // "verbatimModuleSyntax": true,
+    // "useDefineForClassFields": true,
+
+    // "module": "NodeNext",
+    // "allowImportingTsExtensions": true,
+
     "paths": {
       "elements": ["../../packages/elements"]
     }

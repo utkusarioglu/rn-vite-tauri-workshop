@@ -1,13 +1,19 @@
 {
   "name": "xp-app",
-  "main": "./src/XpApp.tsx",
-  "types": "./src/XpApp.tsx",
+  "private": true,
+  "version": "0.0.0",
   "type": "module",
+  "main": "src/XpApp.tsx",
+  "types": "src/XpApp.tsx",
+  "dependencies": {
+    "elements": "workspace:*"
+  },
   "devDependencies": {
     "@babel/preset-typescript": "^7.23.3",
     "@jest/globals": "^29.7.0",
-    "elements": "workspace:*",
-    "jest": "^29.7.0"
+    "jest": "^29.7.0",
+    "tsconfig": "workspace:*",
+    "typescript": "^5.3.3"
   },
   "peerDependencies": {
     "react": "*"
