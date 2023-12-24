@@ -1,11 +1,7 @@
-import {createTamagui, tamaguiBaseConfig} from "elements";
-
-const androidTamaguiConfig = createTamagui(tamaguiBaseConfig);
+import type { androidTamaguiConfig } from "../../../tamagui.config.mts"
 
 export type AndroidTamaguiConfig = typeof androidTamaguiConfig;
 
 declare module "@tamagui/core" {
   interface TamaguiCustomConfig extends AndroidTamaguiConfig {}
 }
-
-export default androidTamaguiConfig;

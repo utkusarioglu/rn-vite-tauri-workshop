@@ -1,15 +1,19 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { tamaguiExtractPlugin, tamaguiPlugin } from "@tamagui/vite-plugin";
+
+// TODO get rid of this require creation as soon as Tamagui fixes its
+// module resolution
+import Module from "node:module";
+const require = Module.createRequire(import.meta.url);
+const { tamaguiExtractPlugin, tamaguiPlugin } = require("@tamagui/vite-plugin");
 
 const shouldExtract = process.env.EXTRACT === "1";
 
 const tamaguiConfig = {
   components: ["tamagui"],
-  config: "src/tamagui.config.ts",
+  config: "tamagui.config.mts",
 };
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
@@ -18,12 +22,6 @@ export default defineConfig({
   ].filter(Boolean),
 
   optimizeDeps: {
-    include: ["xp-app", "elements > tamagui"],
-  },
-  build: {
-    commonjsOptions: {
-      // include: [/xp-app/],
-      include: [/xp-app/, /elements/],
-    },
+    include: ["elements > tamagui"],
   },
 });

@@ -1,10 +1,11 @@
 {
+  "extends": "tsconfig/tsconfig.vite.node.json",
   "compilerOptions": {
-    "composite": true,
-    "skipLibCheck": true,
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "allowSyntheticDefaultImports": true
+    "outDir": "./vite.node",
+    "paths": {
+      "elements": ["../../packages/elements"]
+    }
   },
-  "include": ["vite.config.ts", "tamagui.config.ts"]
+  "include": ["vite.config.mts", "tamagui.config.mts"],
+  "references": [{ "path": "../../packages/elements" }]
 }
