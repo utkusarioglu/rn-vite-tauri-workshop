@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "emitDeclarationOnly": true
+    // "composite": true,
+    // "jsx": "react-jsx",
+    // "declaration": true,
+    // "emitDeclarationOnly": true,
+    // "isolatedModules": true,
+    // "esModuleInterop": true,
+    // "verbatimModuleSyntax": true,
+    // "useDefineForClassFields": true,
+    // "module": "NodeNext",
+    // "allowImportingTsExtensions": true
+  }
+}

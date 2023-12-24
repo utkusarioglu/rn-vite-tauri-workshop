@@ -1,11 +1,10 @@
 {
+  "extends": "tsconfig/tsconfig.package.json",
   "compilerOptions": {
-    "composite": true,
+    "outDir": "dist",
+    "declarationDir": "types",
     "baseUrl": ".",
-    "jsx": "react-jsx",
-    "declaration": true,
-    "emitDeclarationOnly": true,
-    "isolatedModules": true,
+    "skipLibCheck": true
   },
   "include": ["src"],
   "exclude": ["dist", "build", "node_modules"]
