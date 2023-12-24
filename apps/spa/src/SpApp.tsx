@@ -1,5 +1,5 @@
 import { XpApp } from "xp-app";
-import spaTamaguiConfig from "../tamagui.config";
+import spaTamaguiConfig from "../tamagui.config.mts";
 import { ElementsProvider } from "elements";
 
 /**
@@ -7,9 +7,15 @@ import { ElementsProvider } from "elements";
  * 1- TODO Tamagui type mismatch
  */
 export const SpApp = () => {
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
   return (
-    /* @ts-ignore #1*/
-    <ElementsProvider config={spaTamaguiConfig}>
+    <ElementsProvider
+      config={spaTamaguiConfig}
+      /* @ts-ignore #1*/
+      defaultTheme={prefersDark ? "dark" : "light"}
+      disableRootThemeClass
+    >
       <XpApp />
     </ElementsProvider>
   );

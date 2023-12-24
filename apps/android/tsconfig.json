@@ -2,13 +2,17 @@
   "extends": "../../node_modules/@react-native/typescript-config/tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
+
+    "verbatimModuleSyntax": true,
+    "allowImportingTsExtensions": true,
+
     "paths": {
       "xp-app": ["../../packages/xp-app"],
       "elements": ["../../packages/elements"]
     }
   },
   "references": [
-    { "path": "../../packages/xp-app"}, 
-    { "path": "../../packages/elements"}, 
+    { "path": "../../packages/xp-app" },
+    { "path": "../../packages/elements" }
   ]
 }

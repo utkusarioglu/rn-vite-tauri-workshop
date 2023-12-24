@@ -24,3 +24,7 @@ dist-ssr
 *.sw?
 
 .tamagui
+vite.node
+build
+lib
+types
