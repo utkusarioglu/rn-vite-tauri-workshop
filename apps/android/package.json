@@ -5,12 +5,12 @@
   "private": true,
   "main": "index.mjs",
   "scripts": {
-    "build:release": "cd android && ./gradlew assembleRelease",
-    "install:release": "adb install android/app/build/outputs/apk/release/app-release.apk",
-    "adb-connect": "adb connect $ANDROID_TARGET_DEVICE",
-    "rn-start": "TAMAGUI_TARGET=native react-native start",
-    "rn-android": "TAMAGUI_TARGET=native react-native run-android --no-packager --active-arch-only",
-    "dev": "yarn adb-connect && yarn rn-start & yarn rn-android",
+    "release:build": "cd android && ./gradlew assembleRelease",
+    "release:install": "adb install android/app/build/outputs/apk/release/app-release.apk",
+    "adb:connect": "adb connect $ANDROID_TARGET_DEVICE",
+    "rn:start": "TAMAGUI_TARGET=native react-native start",
+    "rn:android": "TAMAGUI_TARGET=native react-native run-android --no-packager --active-arch-only",
+    "dev": "yarn adb:connect && yarn rn:start & yarn rn:android",
     "dev:no-telemetry": "yarn dev",
     "lint": "eslint .",
     "test": "jest"

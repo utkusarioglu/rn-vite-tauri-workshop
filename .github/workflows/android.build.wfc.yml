@@ -1,0 +1,62 @@
+name: Build Android App
+
+on:
+  workflow_call:
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build-android:
+    runs-on: ubuntu-latest
+    env:
+      NODE_ENV: production
+    container:
+      image: utkusarioglu/react-native-android-devcontainer:1.0.18
+      options: --user=0:0
+    strategy:
+      matrix:
+        releases:
+          - repoRelPath: rn-vite-tauri-workshop
+            projectName: rn-vite-tauri-workshop
+            appRelPath: apps/android
+            apkReleaseDirRelPath: android/app/build/outputs/apk/release
+            appReleaseFilename: app-release.apk
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+          path: ${{ matrix.releases.repoRelPath }}
+
+      - name: Set up variables
+        working-directory: "${{ matrix.releases.repoRelPath }}"
+        id: variables
+        env:
+          REPO_REL_PATH: ${{ matrix.releases.repoRelPath }}
+          APP_REL_PATH: ${{ matrix.releases.appRelPath }}
+          APK_RELEASE_DIR_REL_PATH: ${{ matrix.releases.apkReleaseDirRelpath }}
+          APP_RELEASE_FILENAME: ${{ matrix.releases.appReleaseFilename }}
+        run: scripts/github/output/android-variables.sh 
+
+      - name: Install monorepo dependencies
+        working-directory: "${{ matrix.releases.repoRelPath }}"
+        run: scripts/dependencies/android/install-immutable.sh
+
+      - name: Build android
+        working-directory: "${{ matrix.releases.repoRelPath }}/${{ matrix.releases.appRelPath }}"
+        run: yarn release:build
+
+      - name: Save to Google Drive
+        # TODO this path includes `matrix.images.repoRelPath` as
+        # `rn-vite-tauri-workshop` but cannot use the variable because of how
+        # github actions parses this workflow.
+        uses: "./rn-vite-tauri-workshop/.github/actions/google-drive-save"
+        with:
+          projectName: ${{ matrix.releases.projectName }}
+          sourceRelPath: ${{ steps.variables.outputs.source_file_relpath }}
+          fileIdentifier: ${{ steps.variables.outputs.file_identifier }}
+          token: "${{ secrets.GOOGLE_DRIVE_TOKEN }}"
+          folderId: "${{ secrets.GOOGLE_DRIVE_FOLDER_ID }}"
