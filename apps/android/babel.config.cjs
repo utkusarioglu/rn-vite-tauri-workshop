@@ -6,9 +6,9 @@ module.exports = {
       {
         components: ["tamagui"],
         config: "tamagui.config.mts",
-        importsWhitelist: ["constants.js", "colors.js"],
+        importsWhitelist: ["constants.mjs", "colors.mjs"],
         logTimings: true,
-        disableExtraction: process.env.NODE_ENV === "development",
+        disableExtraction: !["TRUE", "true", "1"].includes(process.env.EXTRACT),
       },
     ],
   ],

@@ -6,6 +6,10 @@
       "elements": ["../../packages/elements"]
     }
   },
-  "include": ["vite.config.mts", "tamagui.config.mts"],
+  "include": [
+    "vite.config.mts",
+    "tamagui.config.mts",
+    "../../packages/elements/src/vite/vite.d.mts"
+  ],
   "references": [{ "path": "../../packages/elements" }]
 }
