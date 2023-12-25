@@ -23,8 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
-.tamagui
-vite.node
-build
-lib
-types
+/.tamagui
+/vite.node
+/build
+/lib
+/types

@@ -12,6 +12,9 @@
     },
     "./css-reset": {
       "import": "./src/css-reset.mts"
+    },
+    "./vite": {
+      "import": "./src/vite/vite.mjs"
     }
   },
   "scripts": {

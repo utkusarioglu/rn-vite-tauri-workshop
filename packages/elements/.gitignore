@@ -1,4 +1,4 @@
-dist
-types
-build
-lib
+/dist
+/types
+/build
+/lib
