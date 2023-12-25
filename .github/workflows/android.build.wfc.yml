@@ -20,7 +20,7 @@ jobs:
         releases:
           - repoRelPath: rn-vite-tauri-workshop
             projectName: rn-vite-tauri-workshop
-            appRelPath: apps/android
+            appRelPath: src/targets/android
             apkReleaseDirRelPath: android/app/build/outputs/apk/release
             appReleaseFilename: app-release.apk
 
