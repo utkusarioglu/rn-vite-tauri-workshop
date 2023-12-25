@@ -1,5 +1,5 @@
 import { XpApp } from "xp-app";
-import spaTamaguiConfig from "../tamagui.config.mts";
+import spaTamaguiConfig from "../tamagui.config.mjs";
 import { ElementsProvider } from "elements";
 
 /**

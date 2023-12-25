@@ -1,8 +1,7 @@
 name: Build Tauri Apps
 
 on:
-  push:
-  workflow_dispatch:
+  workflow_call:
 
 jobs:
   release:
@@ -25,7 +24,11 @@ jobs:
         if: matrix.platform == 'ubuntu-20.04'
         run: |
           sudo apt-get update
-          sudo apt-get install -y libgtk-3-dev libwebkit2gtk-4.0-dev libayatana-appindicator3-dev librsvg2-dev
+          sudo apt-get install -y \
+            libgtk-3-dev \
+            libwebkit2gtk-4.0-dev \
+            libayatana-appindicator3-dev \
+            librsvg2-dev
 
       - name: Rust setup
         uses: dtolnay/rust-toolchain@stable
@@ -42,19 +45,19 @@ jobs:
           cache: 'yarn'
 
       - name: Install frontend dependencies
-        working-directory: ./apps/linux
+        working-directory: src/targets/linux
         # If you don't have `beforeBuildCommand` configured you may want to build your frontend here too.
         run: yarn install
 
       - name: Build the app
         uses: tauri-apps/tauri-action@v0
         with:
-          projectPath: apps/linux
+          projectPath: src/targets/linux
           tauriScript: yarn tauri
       
       - name: Save Msi Installer
         uses: actions/upload-artifact@v3
         with:
           name: windows-executables
-          path: apps/linux/src-tauri/target/release/bundle/msi
+          path: src/targets/linux/src-tauri/target/release/bundle/msi
           retention-days: 7

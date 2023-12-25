@@ -5453,9 +5453,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"android.rn-vite-tauri-workshop.workshops.utkusarioglu.com@workspace:apps/android":
+"android.rn-vite-tauri-workshop.workshops.utkusarioglu.com@workspace:src/targets/android":
   version: 0.0.0-use.local
-  resolution: "android.rn-vite-tauri-workshop.workshops.utkusarioglu.com@workspace:apps/android"
+  resolution: "android.rn-vite-tauri-workshop.workshops.utkusarioglu.com@workspace:src/targets/android"
   dependencies:
     "@babel/core": "npm:^7.20.0"
     "@babel/preset-env": "npm:^7.20.0"
@@ -6693,9 +6693,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"elements@workspace:*, elements@workspace:packages/elements":
+"elements@workspace:*, elements@workspace:src/packages/elements":
   version: 0.0.0-use.local
-  resolution: "elements@workspace:packages/elements"
+  resolution: "elements@workspace:src/packages/elements"
   dependencies:
     "@tamagui/config": "npm:^1.79.13"
     tamagui: "npm:^1.79.13"
@@ -9636,9 +9636,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"linux@workspace:apps/linux":
+"linux@workspace:src/targets/linux":
   version: 0.0.0-use.local
-  resolution: "linux@workspace:apps/linux"
+  resolution: "linux@workspace:src/targets/linux"
   dependencies:
     "@tamagui/vite-plugin": "npm:^1.79.17"
     "@tauri-apps/cli": "npm:^1.5.9"
@@ -12042,9 +12042,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"spa.rn-vite-tauri-workshop.workshops.utkusarioglu.com@workspace:apps/spa":
+"spa.rn-vite-tauri-workshop.workshops.utkusarioglu.com@workspace:src/targets/spa":
   version: 0.0.0-use.local
-  resolution: "spa.rn-vite-tauri-workshop.workshops.utkusarioglu.com@workspace:apps/spa"
+  resolution: "spa.rn-vite-tauri-workshop.workshops.utkusarioglu.com@workspace:src/targets/spa"
   dependencies:
     "@tamagui/vite-plugin": "npm:^1.79.13"
     "@types/react": "npm:^18.2.43"
@@ -12534,9 +12534,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsconfig@workspace:*, tsconfig@workspace:packages/tsconfig":
+"tsconfig@workspace:*, tsconfig@workspace:src/packages/tsconfig":
   version: 0.0.0-use.local
-  resolution: "tsconfig@workspace:packages/tsconfig"
+  resolution: "tsconfig@workspace:src/packages/tsconfig"
   languageName: unknown
   linkType: soft
 
@@ -13263,9 +13263,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"xp-app@workspace:*, xp-app@workspace:packages/xp-app":
+"xp-app@workspace:*, xp-app@workspace:src/packages/xp-app":
   version: 0.0.0-use.local
-  resolution: "xp-app@workspace:packages/xp-app"
+  resolution: "xp-app@workspace:src/packages/xp-app"
   dependencies:
     "@babel/preset-typescript": "npm:^7.23.3"
     "@jest/globals": "npm:^29.7.0"

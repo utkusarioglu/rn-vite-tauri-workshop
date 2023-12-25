@@ -5,7 +5,7 @@
     "build": {
       "dependsOn": ["^build"],
       "outputs": [],
-      "dotEnv": ["apps/spa/.env.local"]
+      "dotEnv": ["src/targets/spa/.env.local"]
     },
     "spa#build": {
       "env": ["NODE_ENV", "HOSTNAME", "ENABLE_TELEMETRY"]

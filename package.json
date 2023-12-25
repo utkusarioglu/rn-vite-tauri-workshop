@@ -2,8 +2,8 @@
   "name": "rn-vite-tauri-workshop.workshops.utkusarioglu.com",
   "packageManager": "yarn@4.0.2",
   "workspaces": [
-    "apps/*",
-    "packages/*"
+    "src/targets/*",
+    "src/packages/*"
   ],
   "scripts": {
     "build": "turbo run build",
