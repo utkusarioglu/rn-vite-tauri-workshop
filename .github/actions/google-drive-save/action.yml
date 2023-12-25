@@ -1,0 +1,59 @@
+name: Save to Google Drive 
+description: Saves given file to Google Drive 
+inputs:
+  projectName:
+    description: |
+      Name to use for the project, this will be a part of the saved filename
+    required: true
+  sourceRelPath:
+    description: Path of the source file
+    required: true
+  token:  
+    description: Google Drive token 
+    required: true
+  folderId:
+    description: Google drive folder Id for where to save the file
+    required: true
+  fileIdentifier:
+    description: A string such as a commit hash or a date to uniquely identify
+      a file. This will be appended to the filename.
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Create variables
+      id: variables
+      shell: bash
+      run: |
+        project_name="${{ inputs.projectName }}"
+        release_filename="${project_name}-${{ inputs.fileIdentifier }}.apk"
+        latest_filename="${project_name}-latest.apk"
+
+        source_relpath="${{ inputs.sourceRelPath }}"
+
+        for i in \
+          release_filename \
+          latest_filename \
+          source_relpath;
+        do 
+          echo "$i=${!i}" >> $GITHUB_OUTPUT; 
+        done
+
+    - name: Upload "${{ steps.variables.outputs.commit_hash }}" to Google Drive
+      uses: adityak74/google-drive-upload-git-action@main
+      with:
+        credentials: "${{ inputs.token }}"
+        folderId: "${{ inputs.folderId }}"
+        name: ${{ steps.variables.outputs.release_filename }}
+        filename: ${{ steps.variables.outputs.source_relpath }}
+        overwrite: "false"
+
+    - name: Upload "latest" to Google Drive
+      uses: adityak74/google-drive-upload-git-action@main
+      with:
+        credentials: "${{ inputs.token }}"
+        folderId: "${{ inputs.folderId }}"
+        name: ${{ steps.variables.outputs.latest_filename }}
+        filename: ${{ steps.variables.outputs.source_relpath }}
+        overwrite: "true"
