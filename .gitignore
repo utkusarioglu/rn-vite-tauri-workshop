@@ -48,4 +48,4 @@ apps/*/.certs
 .certs
 .certs.*
 
-*/*/tsconfig.tsbuildinfo
+*/*/*/tsconfig.tsbuildinfo
