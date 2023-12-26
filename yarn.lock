@@ -12534,9 +12534,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsconfig@workspace:*, tsconfig@workspace:src/packages/tsconfig":
+"tsconfig@workspace:*, tsconfig@workspace:src/configs/tsconfig":
   version: 0.0.0-use.local
-  resolution: "tsconfig@workspace:src/packages/tsconfig"
+  resolution: "tsconfig@workspace:src/configs/tsconfig"
   languageName: unknown
   linkType: soft
 
