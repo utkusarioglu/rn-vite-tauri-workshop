@@ -12,7 +12,7 @@
     "rn:android": "TAMAGUI_TARGET=native react-native run-android --no-packager --active-arch-only",
     "dev": "yarn adb:connect && yarn rn:start & yarn rn:android",
     "dev:no-telemetry": "yarn dev",
-    "lint": "eslint .",
+    "lint": "../../../scripts/eslint.sh",
     "test": "jest"
   },
   "dependencies": {
@@ -34,6 +34,8 @@
     "@types/react-test-renderer": "^18.0.0",
     "babel-jest": "^29.6.3",
     "eslint": "^8.19.0",
+    "eslint-config": "workspace:*",
+    "eslint-plugin-react-native": "^4.1.0",
     "jest": "^29.6.3",
     "prettier": "2.8.8",
     "react-test-renderer": "18.2.0",

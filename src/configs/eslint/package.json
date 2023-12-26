@@ -1,0 +1,22 @@
+{
+  "name": "eslint-config",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    "./vite": {
+      "require": "./src/vite.cjs"
+    },
+    "./app": {
+      "require": "./src/app.cjs"
+    },
+    "./package": {
+      "require": "./src/package.cjs"
+    }
+  },
+  "devDependencies": {
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "typescript-eslint": "^0.0.1-alpha.0"
+  }
+}

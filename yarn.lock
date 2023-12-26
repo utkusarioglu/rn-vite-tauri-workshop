@@ -5470,6 +5470,8 @@ __metadata:
     babel-jest: "npm:^29.6.3"
     elements: "workspace:*"
     eslint: "npm:^8.19.0"
+    eslint-config: "workspace:*"
+    eslint-plugin-react-native: "npm:^4.1.0"
     jest: "npm:^29.6.3"
     prettier: "npm:2.8.8"
     react: "npm:18.2.0"
@@ -6698,6 +6700,8 @@ __metadata:
   resolution: "elements@workspace:src/packages/elements"
   dependencies:
     "@tamagui/config": "npm:^1.79.13"
+    eslint: "npm:^8.56.0"
+    eslint-config: "workspace:*"
     tamagui: "npm:^1.79.13"
     tsconfig: "workspace:*"
     typescript: "npm:^5.3.3"
@@ -7261,6 +7265,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-config@workspace:*, eslint-config@workspace:src/configs/eslint":
+  version: 0.0.0-use.local
+  resolution: "eslint-config@workspace:src/configs/eslint"
+  dependencies:
+    eslint-plugin-react-hooks: "npm:^4.6.0"
+    eslint-plugin-react-refresh: "npm:^0.4.5"
+    typescript-eslint: "npm:^0.0.1-alpha.0"
+  languageName: unknown
+  linkType: soft
+
 "eslint-plugin-eslint-comments@npm:^3.2.0":
   version: 3.2.0
   resolution: "eslint-plugin-eslint-comments@npm:3.2.0"
@@ -7334,7 +7348,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react-native@npm:^4.0.0":
+"eslint-plugin-react-native@npm:^4.0.0, eslint-plugin-react-native@npm:^4.1.0":
   version: 4.1.0
   resolution: "eslint-plugin-react-native@npm:4.1.0"
   dependencies:
@@ -9649,6 +9663,7 @@ __metadata:
     "@vitejs/plugin-react": "npm:^4.2.1"
     elements: "workspace:*"
     eslint: "npm:^8.55.0"
+    eslint-config: "workspace:*"
     eslint-plugin-react-hooks: "npm:^4.6.0"
     eslint-plugin-react-refresh: "npm:^0.4.5"
     react: "npm:^18.2.0"
@@ -12054,8 +12069,7 @@ __metadata:
     "@vitejs/plugin-react": "npm:^4.2.1"
     elements: "workspace:*"
     eslint: "npm:^8.55.0"
-    eslint-plugin-react-hooks: "npm:^4.6.0"
-    eslint-plugin-react-refresh: "npm:^0.4.5"
+    eslint-config: "workspace:*"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     tsconfig: "workspace:*"
@@ -12720,6 +12734,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typescript-eslint@npm:^0.0.1-alpha.0":
+  version: 0.0.1-alpha.0
+  resolution: "typescript-eslint@npm:0.0.1-alpha.0"
+  checksum: 2896a13f2c77f5193736016abfdb78139c4f781d10c1fa9d4a1b4dbaa6f8696db9e0060bb148d5e9c74eb76e797530b048dcf135b7d4ff303609b2f47a62b206
+  languageName: node
+  linkType: hard
+
 "typescript@npm:5.0.4":
   version: 5.0.4
   resolution: "typescript@npm:5.0.4"
@@ -13270,6 +13291,8 @@ __metadata:
     "@babel/preset-typescript": "npm:^7.23.3"
     "@jest/globals": "npm:^29.7.0"
     elements: "workspace:*"
+    eslint: "npm:^8.56.0"
+    eslint-config: "workspace:*"
     jest: "npm:^29.7.0"
     tsconfig: "workspace:*"
     typescript: "npm:^5.3.3"

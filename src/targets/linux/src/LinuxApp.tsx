@@ -12,7 +12,7 @@ export const LinuxApp = () => {
   return (
     <ElementsProvider
       config={linuxTamaguiConfig}
-      /* @ts-ignore #1*/
+      /* @ts-expect-error: #1*/
       defaultTheme={prefersDark ? "dark" : "light"}
       disableRootThemeClass
     >
