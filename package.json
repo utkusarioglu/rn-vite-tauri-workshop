@@ -3,7 +3,8 @@
   "packageManager": "yarn@4.0.2",
   "workspaces": [
     "src/targets/*",
-    "src/packages/*"
+    "src/packages/*",
+    "src/configs/*"
   ],
   "scripts": {
     "build": "turbo run build",
