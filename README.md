@@ -10,7 +10,11 @@ This monorepo is a workshop for building a cross platform applications with the 
 
 As with all other apps, the repo also consumes many support tools and non-structural libraries to build its features. Please check `package.json` of apps and packages to learn more.
 
-## Structure
+## What's the aim of this repo?
+
+Currently, none. It may end up becoming a repo template for some future projects. But as of now, this is purely an exploratory exercise.
+
+## Static Structure
 
 One of the aims of this workshop is to allow the cross-platform app to be able to target any operating system or environment it supports independently of any other.
 
@@ -24,13 +28,13 @@ Such granular control over a cross platform app necessitated a rather dispersed 
 
 Here are the main package classes in the monorepo:
 
-- `apps`: Operating system and environment targets for the cross platform app.
+- `targets`: Operating system and environment targets for the cross platform app.
 - `packages`: Components and libraries related to the app, here is a non-exhaustive list of the packages that may be involved:
   - State management
   - Api specifications and related tooling
   - Internationalization
   - React view libraries
-  - Configuration providers
+- `configs`: Packages that provide common configuration objects for a variety of tools and libraries that the repo consumes.
 
 Please refer to the readme files in each package and app for further details on each.
 
@@ -40,13 +44,13 @@ There is some variety in the life cycles and consumption domains of the packages
 
 ### Runtime Dependency graph
 
-Here is a sample UML package diagram to exemplify one possible structure or the project. Please note that this graph is incomplete as this is a workshop that is in constant flux.
+Here is a sample package diagram to exemplify one possible structure or the project. Please note that this graph is incomplete as this is a workshop that is in constant flux.
 
 ```mermaid
 flowchart LR
-    XpApp --> Android
-    XpApp --> Linux
-    XpApp --> Spa
+    XpApp ---> Android
+    XpApp ---> Linux
+    XpApp ---> Spa
 
     Elements --> Views
     Views --> XpApp
@@ -55,7 +59,13 @@ flowchart LR
     I18n --> XpApp
     Api --> Store
     Web3 --> Store
+
+    AndroidSpecific .-> Android
+    LinuxSpecific .-> Linux
+    SpaSpecific .-> Spa
 ```
+
+Where dashed lines specify dependencies specific to a target. Note that target-specific packages may still share common components, or consume target-initialized packages such as `Views` and `I18n`.
 
 ### Initialization Graph
 
@@ -79,16 +89,16 @@ flowchart LR
     I18n --> XpApp
     Store --> XpApp
 
-    XpApp ==> AppInstance
+    XpApp ---> AppInstance
 ```
 
-Where `AppInstance` refers to any target, such as `android`, `spa`, or `windows`.
+Where `AppInstance` refers to any target, such as `Android`, `Spa`, or `Windows`.
 
-Dashed lines are for initialization targets while solid lines overlay the dependencies mentioned in the previous section. Please refer to the related packages for details about why some packages need to be initialized in their targets as opposed to being initialized in the cross platform-app.
+Dashed lines are for initialization targets while solid lines overlay the dependencies mentioned in the previous section. Please refer to the related packages for details about why some packages need to be initialized at their targets as opposed to being initialized at the cross platform-app.
 
 ## Configuration Graph
 
-There is a lot of commonality in the configuration of packages and apps, to keep the code dry, the repo uses configuration packages to capture common properties. Admittedly this does increase the complexity of the repo a bit, but we decided to lean on dryness to aid uniformity in this repo.
+There is a lot of commonality in the configuration of packages and apps, to keep the code dry, this monorepo uses configuration packages to capture common properties. Admittedly, this does increase the complexity of the repo a bit. But we decided to lean on dryness to aid uniformity in this repo.
 
 ```mermaid
 flowchart LR
@@ -105,7 +115,3 @@ flowchart LR
 Where `AppInstance` refers to any target, such as `android`, `spa`, or `windows`.
 
 Dashed lines used for `Tsconfig` edges signify configuration targets. While solid lines overlay runtime dependencies.
-
-## What's the aim of this repo?
-
-Currently, none. It may end up becoming a repo template for some future projects. But as of now, this is purely an exploratory exercise.
