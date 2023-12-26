@@ -96,7 +96,7 @@ Where `AppInstance` refers to any target, such as `Android`, `Spa`, or `Windows`
 
 Dashed lines are for initialization targets while solid lines overlay the dependencies mentioned in the previous section. Please refer to the related packages for details about why some packages need to be initialized at their targets as opposed to being initialized at the cross platform-app.
 
-## Configuration Graph
+### Configuration Graph
 
 There is a lot of commonality in the configuration of packages and apps, to keep the code dry, this monorepo uses configuration packages to capture common properties. Admittedly, this does increase the complexity of the repo a bit. But we decided to lean on dryness to aid uniformity in this repo.
 
