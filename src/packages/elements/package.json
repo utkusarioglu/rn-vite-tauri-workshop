@@ -18,7 +18,8 @@
     }
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "../../../scripts/eslint.sh"
   },
   "dependencies": {
     "@tamagui/config": "^1.79.13",
@@ -30,6 +31,8 @@
     "react-native": "*"
   },
   "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "^5.3.3"
   }

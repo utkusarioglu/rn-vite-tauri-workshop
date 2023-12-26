@@ -12,7 +12,7 @@ export const SpApp = () => {
   return (
     <ElementsProvider
       config={spaTamaguiConfig}
-      /* @ts-ignore #1*/
+      /* @ts-expect-error: #1 */
       defaultTheme={prefersDark ? "dark" : "light"}
       disableRootThemeClass
     >
