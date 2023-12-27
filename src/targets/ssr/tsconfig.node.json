@@ -1,0 +1,15 @@
+{
+  "extends": "tsconfig/tsconfig.vite.node.json",
+  "compilerOptions": {
+    "outDir": "./vite.node",
+    "paths": {
+      "elements": ["../../packages/elements"]
+    }
+  },
+  "include": [
+    "vite.config.mts",
+    "tamagui.config.mts",
+    "../../packages/elements/src/vite/vite.d.mts"
+  ],
+  "references": [{ "path": "../../packages/elements" }]
+}

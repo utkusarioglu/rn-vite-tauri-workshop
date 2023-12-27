@@ -1,0 +1,17 @@
+{
+  "extends": "tsconfig/tsconfig.vite.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "xp-app": ["../../packages/xp-app"],
+      "elements": ["../../packages/elements"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["dist", "build", "node_modules"],
+  "references": [
+    { "path": "./tsconfig.node.json" },
+    { "path": "../../packages/xp-app" },
+    { "path": "../../packages/elements" }
+  ]
+}
