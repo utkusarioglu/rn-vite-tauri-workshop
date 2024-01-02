@@ -1,4 +1,4 @@
-import { XpApp } from "xp-app";
+import { HomeScreen } from "xp-app/screens";
 import linuxTamaguiConfig from "../tamagui.config.mts";
 import { ElementsProvider } from "elements";
 
@@ -16,7 +16,7 @@ export const LinuxApp = () => {
       defaultTheme={prefersDark ? "dark" : "light"}
       disableRootThemeClass
     >
-      <XpApp />
+      <HomeScreen />
     </ElementsProvider>
   );
 };

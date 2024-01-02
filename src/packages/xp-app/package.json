@@ -5,6 +5,11 @@
   "type": "module",
   "main": "src/XpApp.tsx",
   "types": "src/XpApp.tsx",
+  "exports": {
+    "./screens": {
+      "import": "./src/screens/exports.mts"
+    }
+  },
   "dependencies": {
     "elements": "workspace:*"
   },

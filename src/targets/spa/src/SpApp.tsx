@@ -1,4 +1,4 @@
-import { XpApp } from "xp-app";
+import { HomeScreen } from "xp-app/screens";
 import spaTamaguiConfig from "../tamagui.config.mjs";
 import { ElementsProvider } from "elements";
 
@@ -16,7 +16,7 @@ export const SpApp = () => {
       defaultTheme={prefersDark ? "dark" : "light"}
       disableRootThemeClass
     >
-      <XpApp />
+      <HomeScreen />
     </ElementsProvider>
   );
 };

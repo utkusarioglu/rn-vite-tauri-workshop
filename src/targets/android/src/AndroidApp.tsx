@@ -6,7 +6,6 @@
  */
 
 import React from "react";
-import type { PropsWithChildren } from "react";
 import {
   useColorScheme,
   SafeAreaView,
@@ -15,7 +14,7 @@ import {
   // StyleSheet,
 } from "react-native";
 
-import { XpApp } from "xp-app";
+import { HomeScreen } from "xp-app/screens";
 import { ElementsProvider, useTheme } from "elements";
 import androidTamaguiConfig from "../tamagui.config.mts";
 
@@ -30,9 +29,10 @@ export function AndroidApp(): React.JSX.Element {
     <ElementsProvider
       config={androidTamaguiConfig}
       // @ts-ignore #1
-      defaultTheme={prefersDarkMode ? "dark" : "light"}>
-        <ThemedApp />
-      </ElementsProvider>
+      defaultTheme={prefersDarkMode ? "dark" : "light"}
+    >
+      <ThemedApp />
+    </ElementsProvider>
   );
 }
 
@@ -41,7 +41,7 @@ const ThemedApp = () => {
   const theme = useTheme();
   const safeAreaViewStyle = {
     backgroundColor: theme.background.val,
-    flex: 1
+    flex: 1,
   };
 
   return (
@@ -50,7 +50,7 @@ const ThemedApp = () => {
         barStyle={prefersDarkMode ? "light-content" : "dark-content"}
         // backgroundColor={backgroundStyle.backgroundColor}
       />
-        <XpApp />
+      <HomeScreen />
     </SafeAreaView>
-  )
-}
+  );
+};

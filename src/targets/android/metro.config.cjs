@@ -17,6 +17,7 @@ const config = {
   watchFolders: [appRoot, nodeModulesPath, packagesRoot],
   resolver: {
     sourceExts: ["js", "jsx", "json", "ts", "tsx", "mts", "mjs", "cjs"],
+    unstable_enablePackageExports: true,
   },
   transformer: {
     getTransformOptions: async () => ({
