@@ -15,7 +15,7 @@
     }
   },
   "scripts": {
-    "upgrade-all": "yarn-upgrade-all"
+    "upgrade-all-packages": "yarn-upgrade-all"
   },
   "devDependencies": {
     "eslint-plugin-react-hooks": "^4.6.0",

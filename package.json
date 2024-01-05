@@ -15,7 +15,7 @@
     "clean:dependencies": "scripts/clean/dependencies.sh",
     "clean:artifacts": "scripts/clean/artifacts.sh",
     "clean": "yarn clean:artifacts && yarn clean:dependencies",
-    "upgrade-all": "turbo run upgrade-all --concurrency 1"
+    "upgrade-all-packages": "turbo run upgrade-all-packages --concurrency 1"
   },
   "devDependencies": {
     "eslint": "^8.56.0",

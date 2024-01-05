@@ -8,7 +8,7 @@
     "build": "tsc --build && vite build",
     "lint": "../../../scripts/eslint.sh",
     "preview": "vite preview",
-    "upgrade-all": "yarn-upgrade-all"
+    "upgrade-all-packages": "yarn-upgrade-all"
   },
   "dependencies": {
     "elements": "workspace:^",

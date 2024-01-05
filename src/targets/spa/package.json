@@ -7,14 +7,14 @@
     "dev": "vite",
     "build": "tsc --build && vite build",
     "lint": "../../../scripts/eslint.sh",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "upgrade-all-packages": "yarn-upgrade-all"
   },
   "dependencies": {
     "elements": "workspace:^",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "xp-app": "workspace:^",
-    "upgrade-all": "yarn-upgrade-all"
+    "xp-app": "workspace:^"
   },
   "devDependencies": {
     "@tamagui/vite-plugin": "1.82.3",

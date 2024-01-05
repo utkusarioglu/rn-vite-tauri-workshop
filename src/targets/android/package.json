@@ -14,7 +14,7 @@
     "dev:no-telemetry": "yarn dev",
     "lint": "../../../scripts/eslint.sh",
     "test": "jest",
-    "upgrade-all": "yarn-upgrade-all"
+    "upgrade-all-packages": "yarn-upgrade-all"
   },
   "dependencies": {
     "elements": "workspace:^",

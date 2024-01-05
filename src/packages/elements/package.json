@@ -20,7 +20,7 @@
   "scripts": {
     "test": "jest",
     "lint": "../../../scripts/eslint.sh",
-    "upgrade-all": "yarn-upgrade-all"
+    "upgrade-all-packages": "yarn-upgrade-all"
   },
   "dependencies": {
     "@tamagui/config": "1.82.3",

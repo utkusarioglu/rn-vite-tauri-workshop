@@ -12637,8 +12637,6 @@ __metadata:
 "tsconfig@workspace:^, tsconfig@workspace:src/configs/tsconfig":
   version: 0.0.0-use.local
   resolution: "tsconfig@workspace:src/configs/tsconfig"
-  dependencies:
-    yarn-upgrade-all: "npm:^0.7.2"
   languageName: unknown
   linkType: soft
 

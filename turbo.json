@@ -19,7 +19,7 @@
       "cache": false,
       "persistent": true
     },
-    "upgrade-all": {
+    "upgrade-all-packages": {
       "cache": false,
       "persistent": false
     }
