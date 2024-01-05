@@ -18,6 +18,10 @@
     "dev:no-telemetry": {
       "cache": false,
       "persistent": true
+    },
+    "upgrade-all": {
+      "cache": false,
+      "persistent": false
     }
   }
 }

@@ -11,22 +11,24 @@
     }
   },
   "dependencies": {
-    "elements": "workspace:*"
+    "elements": "workspace:^"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.23.3",
     "@jest/globals": "^29.7.0",
     "eslint": "^8.56.0",
-    "eslint-config": "workspace:*",
+    "eslint-config": "workspace:^",
     "jest": "^29.7.0",
-    "tsconfig": "workspace:*",
-    "typescript": "^5.3.3"
+    "tsconfig": "workspace:^",
+    "typescript": "^5.3.3",
+    "yarn-upgrade-all": "^0.7.2"
   },
   "peerDependencies": {
     "react": "*"
   },
   "scripts": {
     "test": "jest",
-    "lint": "../../../scripts/eslint.sh"
+    "lint": "../../../scripts/eslint.sh",
+    "upgrade-all": "yarn-upgrade-all"
   }
 }

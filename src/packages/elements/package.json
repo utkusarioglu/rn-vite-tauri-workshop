@@ -19,11 +19,12 @@
   },
   "scripts": {
     "test": "jest",
-    "lint": "../../../scripts/eslint.sh"
+    "lint": "../../../scripts/eslint.sh",
+    "upgrade-all": "yarn-upgrade-all"
   },
   "dependencies": {
-    "@tamagui/config": "^1.79.13",
-    "tamagui": "^1.79.13"
+    "@tamagui/config": "1.82.3",
+    "tamagui": "1.82.3"
   },
   "peerDependencies": {
     "react": "*",
@@ -32,8 +33,9 @@
   },
   "devDependencies": {
     "eslint": "^8.56.0",
-    "eslint-config": "workspace:*",
-    "tsconfig": "workspace:*",
-    "typescript": "^5.3.3"
+    "eslint-config": "workspace:^",
+    "tsconfig": "workspace:^",
+    "typescript": "^5.3.3",
+    "yarn-upgrade-all": "^0.7.2"
   }
 }

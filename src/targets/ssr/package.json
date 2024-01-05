@@ -7,25 +7,31 @@
     "dev": "vite",
     "build": "tsc --build && vite build",
     "lint": "../../../scripts/eslint.sh",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "upgrade-all": "yarn-upgrade-all"
   },
   "dependencies": {
-    "elements": "workspace:*",
+    "elements": "workspace:^",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "xp-app": "workspace:*"
+    "xp-app": "workspace:^"
   },
   "devDependencies": {
-    "@tamagui/vite-plugin": "^1.79.13",
-    "@types/react": "^18.2.43",
-    "@types/react-dom": "^18.2.17",
-    "@typescript-eslint/eslint-plugin": "^6.14.0",
-    "@typescript-eslint/parser": "^6.14.0",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@tamagui/vite-plugin": "1.82.3",
+    "@types/react": "^18.2.46",
+    "@types/react-dom": "^18.2.18",
+    "@typescript-eslint/eslint-plugin": "^6.17.0",
+    "@typescript-eslint/parser": "^6.17.0",
     "@vitejs/plugin-react": "^4.2.1",
-    "eslint": "^8.55.0",
-    "eslint-config": "workspace:*",
-    "tsconfig": "workspace:*",
-    "typescript": "^5.2.2",
-    "vite": "^5.0.8"
+    "eslint": "^8.56.0",
+    "eslint-config": "workspace:^",
+    "tsconfig": "workspace:^",
+    "typescript": "^5.3.3",
+    "vike": "^0.4.153",
+    "vite": "^5.0.11",
+    "vite-plugin-commonjs": "^0.10.1",
+    "yarn-upgrade-all": "^0.7.2"
   }
 }
