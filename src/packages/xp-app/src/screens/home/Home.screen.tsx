@@ -1,7 +1,5 @@
 import { Paragraph, Section, H1 } from "elements";
 
-console.log({ env: process.env });
-
 export const HomeScreen = () => {
   return (
     <Section>

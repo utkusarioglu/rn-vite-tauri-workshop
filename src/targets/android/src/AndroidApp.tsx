@@ -14,7 +14,7 @@ import {
   // StyleSheet,
 } from "react-native";
 
-import { HomeScreen } from "xp-app/screens";
+import { HomeScreen, CounterScreen } from "xp-app/screens";
 import { ElementsProvider, useTheme } from "elements";
 import androidTamaguiConfig from "../tamagui.config.mts";
 
@@ -50,6 +50,7 @@ const ThemedApp = () => {
         barStyle={prefersDarkMode ? "light-content" : "dark-content"}
         // backgroundColor={backgroundStyle.backgroundColor}
       />
+      {/* <CounterScreen /> */}
       <HomeScreen />
     </SafeAreaView>
   );

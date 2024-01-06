@@ -7,7 +7,9 @@ declare module "elements/vite" {
 
   interface PrepareTamaguiVitePluginsParams {
     extract: boolean;
-    options: Omit<TamaguiOptions, "platform">;
+    options: Omit<TamaguiOptions, "platform"> & {
+      useReactNativeWebLite?: boolean;
+    };
   }
 
   type TamaguiPluginReturn = ReturnType<typeof tamaguiPlugin>;

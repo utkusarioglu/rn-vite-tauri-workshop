@@ -9,4 +9,4 @@ export const prepareTamaguiVitePlugins = ({ extract, options }) => {
   ].filter(Boolean);
 };
 
-export const elementsOptimizeDepsInclude = ["elements > tamagui"];
+// export const elementsOptimizeDepsInclude = ["elements > tamagui"];

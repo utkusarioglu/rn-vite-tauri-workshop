@@ -2,7 +2,7 @@ import { UserConfig, defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import {
   prepareTamaguiVitePlugins,
-  elementsOptimizeDepsInclude,
+  // elementsOptimizeDepsInclude,
 } from "elements/vite";
 
 const tamaguiVitePlugins = prepareTamaguiVitePlugins({
@@ -10,6 +10,7 @@ const tamaguiVitePlugins = prepareTamaguiVitePlugins({
   options: {
     components: ["tamagui"],
     config: "tamagui.config.mts",
+    useReactNativeWebLite: true,
   },
 });
 
@@ -41,9 +42,13 @@ const tauriConfig: Partial<UserConfig> = {
 };
 
 export default defineConfig({
-  plugins: [react(), ...tamaguiVitePlugins],
-  optimizeDeps: {
-    include: [...elementsOptimizeDepsInclude],
+  server: {
+    port: 4000,
   },
+
+  plugins: [react(), ...tamaguiVitePlugins],
+  // optimizeDeps: {
+  //   include: [...elementsOptimizeDepsInclude],
+  // },
   ...tauriConfig,
 });
