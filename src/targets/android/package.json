@@ -17,9 +17,14 @@
     "upgrade-all-packages": "yarn-upgrade-all"
   },
   "dependencies": {
+    "@react-navigation/native": "^6.1.9",
+    "@react-navigation/native-stack": "^6.9.17",
     "elements": "workspace:^",
     "react": "^18.2.0",
     "react-native": "^0.73.1",
+    "react-native-gesture-handler": "^2.14.0",
+    "react-native-safe-area-context": "^4.8.2",
+    "react-native-screens": "^3.29.0",
     "xp-app": "workspace:^"
   },
   "devDependencies": {
@@ -30,15 +35,17 @@
     "@react-native/eslint-config": "^0.74.0",
     "@react-native/metro-config": "^0.73.2",
     "@react-native/typescript-config": "^0.74.0",
-    "@tamagui/babel-plugin": "^1.82.4",
-    "@types/react": "^18.2.46",
+    "@tamagui/babel-plugin": "^1.82.8",
+    "@types/react": "^18.2.47",
     "@types/react-test-renderer": "^18.0.7",
     "babel-jest": "^29.7.0",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.4",
     "eslint": "^8.56.0",
     "eslint-config": "workspace:^",
     "eslint-plugin-react-native": "^4.1.0",
     "jest": "^29.7.0",
     "prettier": "^3.1.1",
+    "react-native-dotenv": "^3.4.9",
     "react-test-renderer": "^18.2.0",
     "typescript": "^5.3.3",
     "yarn-upgrade-all": "^0.7.2"

@@ -1,4 +1,4 @@
-import type { androidTamaguiConfig } from "../../../tamagui.config.mts"
+import type { androidTamaguiConfig } from "#/tamagui.config.mts";
 
 export type AndroidTamaguiConfig = typeof androidTamaguiConfig;
 

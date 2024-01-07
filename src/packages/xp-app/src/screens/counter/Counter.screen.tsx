@@ -4,8 +4,14 @@ import { Paragraph, DefaultButton, Section, H1 } from "elements";
 function useCounter(startValue: number) {
   const [count, setCount] = useState(startValue);
 
-  const incrementOnPress = () => setCount((current) => ++current);
-  const decrementOnPress = () => setCount((current) => --current);
+  const incrementOnPress = () => {
+    console.log("increment");
+    setCount((current) => ++current);
+  };
+  const decrementOnPress = () => {
+    console.log("decrement");
+    setCount((current) => --current);
+  };
 
   return {
     count,

@@ -14,9 +14,10 @@ import {
   // StyleSheet,
 } from "react-native";
 
-import { HomeScreen, CounterScreen } from "xp-app/screens";
 import { ElementsProvider, useTheme } from "elements";
 import androidTamaguiConfig from "#/tamagui.config.mts";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { RootNavigator } from "#navigators/root/Root.navigator.tsx";
 
 /**
  * @dev
@@ -26,13 +27,15 @@ export function AndroidApp(): React.JSX.Element {
   const prefersDarkMode = useColorScheme() === "dark";
 
   return (
-    <ElementsProvider
-      config={androidTamaguiConfig}
-      // @ts-ignore #1
-      defaultTheme={prefersDarkMode ? "dark" : "light"}
-    >
-      <ThemedApp />
-    </ElementsProvider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <ElementsProvider
+        config={androidTamaguiConfig}
+        // @ts-ignore #1
+        defaultTheme={prefersDarkMode ? "dark" : "light"}
+      >
+        <ThemedApp />
+      </ElementsProvider>
+    </GestureHandlerRootView>
   );
 }
 
@@ -50,8 +53,7 @@ const ThemedApp = () => {
         barStyle={prefersDarkMode ? "light-content" : "dark-content"}
         // backgroundColor={backgroundStyle.backgroundColor}
       />
-      {/* <CounterScreen /> */}
-      <HomeScreen />
+      <RootNavigator />
     </SafeAreaView>
   );
 };

@@ -8,6 +8,8 @@
 
     "paths": {
       "#/*": ["./*"],
+      "#navigators*": ["./src/components/navigators/*"],
+      "#screens*": ["./src/components/screens/*"],
       "xp-app": ["../../packages/xp-app"],
       "elements": ["../../packages/elements"]
     }

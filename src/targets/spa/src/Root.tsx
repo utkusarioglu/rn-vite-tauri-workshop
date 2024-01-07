@@ -1,5 +1,5 @@
 import "elements/css-reset";
-import "./styles/index.css";
+import "#/src/styles/index.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { SpApp } from "./SpApp.tsx";

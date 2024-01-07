@@ -11,6 +11,18 @@ const PATH_ALIASES = [
     startsWith: "#/",
     replace: `${__dirname}/`,
   },
+  {
+    startsWith: "#screens/",
+    replace: `${__dirname}/src/components/screens/`,
+  },
+  {
+    startsWith: "#navigators/",
+    replace: `${__dirname}/src/components/navigators/`,
+  },
+  {
+    startsWith: "#types/",
+    replace: `${__dirname}/src/types/`,
+  },
 ];
 
 /**

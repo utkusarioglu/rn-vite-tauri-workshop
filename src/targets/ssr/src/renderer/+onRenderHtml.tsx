@@ -1,5 +1,5 @@
 import "elements/css-reset";
-import "../styles/index.css";
+import "#/src/styles/index.css";
 import ReactDOMServer from "react-dom/server";
 import { PageLayout } from "./PageLayout.tsx";
 import { escapeInject, dangerouslySkipEscape } from "vike/server";
@@ -46,6 +46,8 @@ export const onRenderHtml: OnRenderHtmlAsync = async (
     // @ts-expect-error: #1
     (documentProps && documentProps.description) || "App using Vite + Vike";
 
+  const tamaguiCss = ssrTamaguiConfig.getCSS();
+
   const documentHtml = escapeInject`<!DOCTYPE html>
     <html lang="en">
       <head>
@@ -53,7 +55,7 @@ export const onRenderHtml: OnRenderHtmlAsync = async (
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="${desc}" />
         <title>${title}</title>
-        <style>${ssrTamaguiConfig.getCSS()}</style>
+        <style>${dangerouslySkipEscape(tamaguiCss)}</style>
       </head>
       <body>
         <div id="react-root">${dangerouslySkipEscape(pageHtml)}</div>
