@@ -1,6 +1,19 @@
-import { HomeScreen } from "xp-app/screens";
 import spaTamaguiConfig from "#/tamagui.config.mts";
+import { SpaHomeScreen } from "#screens/Home.screen.tsx";
+import { SpaCounterScreen } from "#screens/Counter.screen.tsx";
 import { ElementsProvider } from "elements";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <SpaHomeScreen />,
+  },
+  {
+    path: "/counter",
+    element: <SpaCounterScreen />,
+  },
+]);
 
 /**
  * @dev
@@ -16,7 +29,7 @@ export const SpApp = () => {
       defaultTheme={prefersDark ? "dark" : "light"}
       disableRootThemeClass
     >
-      <HomeScreen />
+      <RouterProvider router={router} />
     </ElementsProvider>
   );
 };

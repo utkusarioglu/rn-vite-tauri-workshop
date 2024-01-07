@@ -3,9 +3,10 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "#/*": ["./*"],
       "xp-app": ["../../packages/xp-app"],
-      "elements": ["../../packages/elements"]
+      "elements": ["../../packages/elements"],
+      "#screens/*": ["./src/components/screens/*"],
+      "#/*": ["./*"]
     }
   },
   "include": ["src"],

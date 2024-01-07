@@ -1,3 +1,4 @@
+import { join } from "node:path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { prepareTamaguiVitePlugins } from "elements/vite";
@@ -20,6 +21,7 @@ export default defineConfig({
 
   resolve: {
     alias: {
+      "#screens": join(__dirname, "src/components/screens"),
       "#": __dirname,
     },
   },
