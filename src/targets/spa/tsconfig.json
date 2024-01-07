@@ -3,6 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "#/*": ["./*"],
       "xp-app": ["../../packages/xp-app"],
       "elements": ["../../packages/elements"]
     }

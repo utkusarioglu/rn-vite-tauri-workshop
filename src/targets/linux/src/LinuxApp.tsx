@@ -1,5 +1,5 @@
 import { HomeScreen } from "xp-app/screens";
-import linuxTamaguiConfig from "../tamagui.config.mts";
+import linuxTamaguiConfig from "#/tamagui.config.mts";
 import { ElementsProvider } from "elements";
 
 /**

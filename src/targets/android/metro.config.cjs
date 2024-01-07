@@ -2,9 +2,16 @@ const { getDefaultConfig, mergeConfig } = require("@react-native/metro-config");
 const path = require("node:path");
 
 const appRoot = __dirname;
-const workspaceRoot = path.resolve(appRoot, "../../..");
-const packagesRoot = path.resolve(workspaceRoot, "src/packages");
-const nodeModulesPath = path.resolve(workspaceRoot, "node_modules");
+const repoRoot = path.resolve(appRoot, "../../..");
+const packagesRoot = path.resolve(repoRoot, "src/packages");
+const nodeModulesPath = path.resolve(repoRoot, "node_modules");
+
+const PATH_ALIASES = [
+  {
+    startsWith: "#/",
+    replace: `${__dirname}/`,
+  },
+];
 
 /**
  * Metro configuration
@@ -13,12 +20,31 @@ const nodeModulesPath = path.resolve(workspaceRoot, "node_modules");
  * @type {import('metro-config').MetroConfig}
  */
 const config = {
-  entry: "index.cjs",
   watchFolders: [appRoot, nodeModulesPath, packagesRoot],
+
   resolver: {
     sourceExts: ["js", "jsx", "json", "ts", "tsx", "mts", "mjs", "cjs"],
     unstable_enablePackageExports: true,
+
+    resolveRequest: (context, moduleName, platform) => {
+      for (const alias of PATH_ALIASES) {
+        if (moduleName.startsWith(alias.startsWith)) {
+          const filePath = context.dependency.name.replace(
+            alias.startsWith,
+            alias.replace,
+          );
+
+          return {
+            filePath,
+            type: "sourceFile",
+          };
+        }
+      }
+
+      return context.resolveRequest(context, moduleName, platform);
+    },
   },
+
   transformer: {
     getTransformOptions: async () => ({
       transform: {

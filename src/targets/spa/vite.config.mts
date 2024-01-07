@@ -1,9 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import {
-  prepareTamaguiVitePlugins,
-  // elementsOptimizeDepsInclude,
-} from "elements/vite";
+import { prepareTamaguiVitePlugins } from "elements/vite";
 
 const tamaguiVitePlugins = prepareTamaguiVitePlugins({
   extract: ["TRUE", "true", "1"].includes(process.env.EXTRACT!),
@@ -21,9 +18,11 @@ export default defineConfig({
     port: 5000,
   },
 
-  plugins: [react(), ...tamaguiVitePlugins],
+  resolve: {
+    alias: {
+      "#": __dirname,
+    },
+  },
 
-  // optimizeDeps: {
-  //   include: [...elementsOptimizeDepsInclude],
-  // },
+  plugins: [react(), ...tamaguiVitePlugins],
 });

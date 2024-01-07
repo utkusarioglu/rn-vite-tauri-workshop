@@ -1,4 +1,5 @@
 import type { FC, PropsWithChildren } from "react";
+
 interface PageLayoutProps {
   pageContext: any;
 }
@@ -8,7 +9,7 @@ export const PageLayout: FC<PropsWithChildren<PageLayoutProps>> = ({
   // pageContext,
 }) => {
   return (
-    <div>
+    <>
       <div>
         <a className="navitem" href="/">
           Home
@@ -18,6 +19,6 @@ export const PageLayout: FC<PropsWithChildren<PageLayoutProps>> = ({
         </a>
       </div>
       {children}
-    </div>
+    </>
   );
 };

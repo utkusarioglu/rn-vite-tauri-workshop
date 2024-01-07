@@ -16,7 +16,7 @@ import {
 
 import { HomeScreen, CounterScreen } from "xp-app/screens";
 import { ElementsProvider, useTheme } from "elements";
-import androidTamaguiConfig from "../tamagui.config.mts";
+import androidTamaguiConfig from "#/tamagui.config.mts";
 
 /**
  * @dev

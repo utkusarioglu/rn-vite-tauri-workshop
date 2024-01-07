@@ -1,17 +1,14 @@
-// https://vike.dev/onRenderClient
-export { onRenderClient };
-
 import { hydrateRoot } from "react-dom/client";
 import { PageLayout } from "./PageLayout.tsx";
 import type { OnRenderClientAsync } from "vike/types";
 import { ElementsProvider } from "elements";
-import ssrTamaguiConfig from "../../tamagui.config.mts";
+import ssrTamaguiConfig from "#/tamagui.config.mts";
 
 /**
  * @dev
  * #1 Vike type issue, should be gone when pageContext types are defined
  */
-const onRenderClient: OnRenderClientAsync = async (
+export const onRenderClient: OnRenderClientAsync = async (
   pageContext,
 ): ReturnType<OnRenderClientAsync> => {
   // @ts-expect-error: #1

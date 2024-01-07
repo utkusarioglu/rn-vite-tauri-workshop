@@ -1,9 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import {
-  prepareTamaguiVitePlugins,
-  // elementsOptimizeDepsInclude,
-} from "elements/vite";
+import { prepareTamaguiVitePlugins } from "elements/vite";
 import vike from "vike/plugin";
 
 const tamaguiVitePlugins = prepareTamaguiVitePlugins({
@@ -20,15 +17,11 @@ const tamaguiVitePlugins = prepareTamaguiVitePlugins({
 export default defineConfig({
   plugins: [react(), ...tamaguiVitePlugins, vike()],
 
-  // optimizeDeps: {
-  //   include: [...elementsOptimizeDepsInclude],
-  // },
-
-  // resolve: {
-  //   alias: {
-  //     "react-native": "react-native-web",
-  //   },
-  // },
+  resolve: {
+    alias: {
+      "#": __dirname,
+    },
+  },
 
   ssr: {
     external: ["@react-native/normalize-color"],

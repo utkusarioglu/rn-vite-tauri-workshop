@@ -5,7 +5,7 @@ import { PageLayout } from "./PageLayout.tsx";
 import { escapeInject, dangerouslySkipEscape } from "vike/server";
 import type { OnRenderHtmlAsync } from "vike/types";
 import { ElementsProvider } from "elements";
-import ssrTamaguiConfig from "../../tamagui.config.mts";
+import ssrTamaguiConfig from "#/tamagui.config.mts";
 
 /**
  * @dev
@@ -65,7 +65,7 @@ export const onRenderHtml: OnRenderHtmlAsync = async (
     pageContext: {
       // @ts-expect-error
       pageProps: {
-        passToClient: true,
+        // passToClient: true,
       },
       // bunnies: "yes",
       // We can add some `pageContext` here, which is useful if we want to do page redirection https://vike.dev/page-redirection

@@ -1,9 +1,6 @@
 import { UserConfig, defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import {
-  prepareTamaguiVitePlugins,
-  // elementsOptimizeDepsInclude,
-} from "elements/vite";
+import { prepareTamaguiVitePlugins } from "elements/vite";
 
 const tamaguiVitePlugins = prepareTamaguiVitePlugins({
   extract: ["TRUE", "true", "1"].includes(process.env.EXTRACT!),
@@ -47,8 +44,12 @@ export default defineConfig({
   },
 
   plugins: [react(), ...tamaguiVitePlugins],
-  // optimizeDeps: {
-  //   include: [...elementsOptimizeDepsInclude],
-  // },
+
+  resolve: {
+    alias: {
+      "#": __dirname,
+    },
+  },
+
   ...tauriConfig,
 });
