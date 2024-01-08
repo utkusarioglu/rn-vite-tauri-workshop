@@ -1,4 +1,4 @@
-import type { spaTamaguiConfig } from "../../../tamagui.config.mts";
+import type { spaTamaguiConfig } from "#/tamagui.config.mts";
 
 export type SpaTamaguiConfig = typeof spaTamaguiConfig;
 

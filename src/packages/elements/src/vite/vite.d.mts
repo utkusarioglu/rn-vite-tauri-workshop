@@ -1,4 +1,4 @@
-declare module "elements/vite" {
+declare module "package--elements/vite" {
   import type { TamaguiOptions } from "@tamagui/static";
   import type {
     tamaguiExtractPlugin,

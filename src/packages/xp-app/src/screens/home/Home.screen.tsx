@@ -1,5 +1,5 @@
-import { Paragraph, Section, H1, DefaultButton } from "elements";
-import { Navigation } from "xp-navigation";
+import { Paragraph, Section, H1, DefaultButton } from "package--elements";
+import { Navigation } from "package--xp-navigation";
 
 export const HomeScreen = () => {
   return (

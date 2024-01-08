@@ -1,7 +1,7 @@
-import { join } from "node:path";
+import { join, resolve } from "node:path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { prepareTamaguiVitePlugins } from "elements/vite";
+import { prepareTamaguiVitePlugins } from "package--elements/vite";
 
 const tamaguiVitePlugins = prepareTamaguiVitePlugins({
   extract: ["TRUE", "true", "1"].includes(process.env.EXTRACT!),
@@ -20,11 +20,24 @@ export default defineConfig({
   },
 
   resolve: {
-    alias: {
-      "#wrappers": join(__dirname, "src/components/wrappers"),
-      "#screens": join(__dirname, "src/components/screens"),
-      "#": __dirname,
-    },
+    alias: [
+      {
+        find: /^#styles\//,
+        replacement: join(__dirname, "src/styles/"),
+      },
+      {
+        find: /^#wrappers\//,
+        replacement: join(__dirname, "src/components/wrappers/"),
+      },
+      {
+        find: /^#screens/,
+        replacement: join(__dirname, "src/components/screens/"),
+      },
+      {
+        find: /^#\//,
+        replacement: `${__dirname}/`,
+      },
+    ],
   },
 
   plugins: [react(), ...tamaguiVitePlugins],

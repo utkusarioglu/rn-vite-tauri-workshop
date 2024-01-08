@@ -1,1 +1,1 @@
-export { HomeScreen as Page } from "xp-app/screens";
+export { HomeScreen as Page } from "package--xp-app/screens";

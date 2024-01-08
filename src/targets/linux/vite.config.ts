@@ -1,7 +1,7 @@
 import { join } from "node:path";
 import { UserConfig, defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { prepareTamaguiVitePlugins } from "elements/vite";
+import { prepareTamaguiVitePlugins } from "package--elements/vite";
 
 const tamaguiVitePlugins = prepareTamaguiVitePlugins({
   extract: ["TRUE", "true", "1"].includes(process.env.EXTRACT!),
@@ -18,6 +18,7 @@ const tauriConfig: Partial<UserConfig> = {
   // Tauri expects a fixed port, fail if that port is not available
   server: {
     strictPort: true,
+    port: 4000,
   },
   // to access the Tauri environment variables set by the CLI with information about the current target
   envPrefix: [
@@ -43,11 +44,24 @@ export default defineConfig({
   plugins: [react(), ...tamaguiVitePlugins],
 
   resolve: {
-    alias: {
-      "#wrappers": join(__dirname, "src/components/wrappers"),
-      "#screens": join(__dirname, "src/components/screens"),
-      "#": __dirname,
-    },
+    alias: [
+      {
+        find: /^#styles\//,
+        replacement: join(__dirname, "src/styles/"),
+      },
+      {
+        find: /^#wrappers\//,
+        replacement: join(__dirname, "src/components/wrappers/"),
+      },
+      {
+        find: /^#screens/,
+        replacement: join(__dirname, "src/components/screens/"),
+      },
+      {
+        find: /^#\//,
+        replacement: `${__dirname}/`,
+      },
+    ],
   },
 
   ...tauriConfig,

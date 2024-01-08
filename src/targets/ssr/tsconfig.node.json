@@ -1,9 +1,9 @@
 {
-  "extends": "tsconfig/tsconfig.vite.node.json",
+  "extends": "config--typescript/tsconfig.vite.node.json",
   "compilerOptions": {
     "outDir": "./vite.node",
     "paths": {
-      "elements": ["../../packages/elements"]
+      "package--elements": ["../../packages/elements"]
     }
   },
   "include": [

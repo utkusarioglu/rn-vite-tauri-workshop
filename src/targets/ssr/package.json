@@ -11,11 +11,11 @@
     "upgrade-all-packages": "yarn-upgrade-all"
   },
   "dependencies": {
-    "elements": "workspace:^",
+    "package--elements": "workspace:^",
+    "package--xp-app": "workspace:^",
+    "package--xp-navigation": "workspace:^",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "xp-app": "workspace:^",
-    "xp-navigation": "workspace:^"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.7",
@@ -26,9 +26,9 @@
     "@typescript-eslint/eslint-plugin": "^6.18.0",
     "@typescript-eslint/parser": "^6.18.0",
     "@vitejs/plugin-react": "^4.2.1",
+    "config--eslint": "workspace:^",
+    "config--typescript": "workspace:^",
     "eslint": "^8.56.0",
-    "eslint-config": "workspace:^",
-    "tsconfig": "workspace:^",
     "typescript": "^5.3.3",
     "vike": "^0.4.156",
     "vite": "^5.0.11",

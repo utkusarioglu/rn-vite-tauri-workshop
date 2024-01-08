@@ -1,11 +1,11 @@
 {
-  "extends": "tsconfig/tsconfig.vite.json",
+  "extends": "config--typescript/tsconfig.vite.json",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "xp-navigation": ["../../packages/xp-navigation"],
-      "xp-app": ["../../packages/xp-app"],
-      "elements": ["../../packages/elements"],
+      "package--xp-navigation": ["../../packages/xp-navigation"],
+      "package--xp-app": ["../../packages/xp-app"],
+      "package--elements": ["../../packages/elements"],
       "#/*": ["./*"]
     }
   },

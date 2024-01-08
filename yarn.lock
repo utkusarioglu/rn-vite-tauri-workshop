@@ -5515,12 +5515,14 @@ __metadata:
     "@types/react-test-renderer": "npm:^18.0.7"
     babel-jest: "npm:^29.7.0"
     babel-plugin-transform-inline-environment-variables: "npm:^0.4.4"
-    elements: "workspace:^"
+    config--eslint: "workspace:^"
     eslint: "npm:^8.56.0"
-    eslint-config: "workspace:^"
     eslint-plugin-react-native: "npm:^4.1.0"
     jest: "npm:^29.7.0"
     metro-react-native-babel-preset: "npm:^0.77.0"
+    package--elements: "workspace:^"
+    package--xp-app: "workspace:^"
+    package--xp-navigation: "workspace:^"
     prettier: "npm:^3.1.1"
     react: "npm:^18.2.0"
     react-native: "npm:^0.73.1"
@@ -5530,8 +5532,6 @@ __metadata:
     react-native-screens: "npm:^3.29.0"
     react-test-renderer: "npm:^18.2.0"
     typescript: "npm:^5.3.3"
-    xp-app: "workspace:^"
-    xp-navigation: "workspace:^"
     yarn-upgrade-all: "npm:^0.7.2"
   languageName: unknown
   linkType: soft
@@ -6470,6 +6470,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"config--eslint@workspace:^, config--eslint@workspace:src/configs/eslint":
+  version: 0.0.0-use.local
+  resolution: "config--eslint@workspace:src/configs/eslint"
+  dependencies:
+    eslint-plugin-react-hooks: "npm:^4.6.0"
+    eslint-plugin-react-refresh: "npm:^0.4.5"
+    typescript-eslint: "npm:^0.0.1-alpha.0"
+    yarn-upgrade-all: "npm:^0.7.2"
+  languageName: unknown
+  linkType: soft
+
+"config--typescript@workspace:^, config--typescript@workspace:src/configs/typescript":
+  version: 0.0.0-use.local
+  resolution: "config--typescript@workspace:src/configs/typescript"
+  languageName: unknown
+  linkType: soft
+
 "connect@npm:^3.6.5":
   version: 3.7.0
   resolution: "connect@npm:3.7.0"
@@ -6785,24 +6802,6 @@ __metadata:
   checksum: dbf9deb234cbd381a91f41f6c6729cc8b4bed9b1580d6aea589d689d5f2a8aadf88837ef6887e761c143a1e1015f5eb3ae1bd2728a3068fa6a235c16c0fd76ae
   languageName: node
   linkType: hard
-
-"elements@workspace:^, elements@workspace:src/packages/elements":
-  version: 0.0.0-use.local
-  resolution: "elements@workspace:src/packages/elements"
-  dependencies:
-    "@tamagui/config": "npm:^1.82.9"
-    eslint: "npm:^8.56.0"
-    eslint-config: "workspace:^"
-    tamagui: "npm:^1.82.9"
-    tsconfig: "workspace:^"
-    typescript: "npm:^5.3.3"
-    yarn-upgrade-all: "npm:^0.7.2"
-  peerDependencies:
-    react: "*"
-    react-dom: "*"
-    react-native: "*"
-  languageName: unknown
-  linkType: soft
 
 "emittery@npm:^0.13.1":
   version: 0.13.1
@@ -7215,17 +7214,6 @@ __metadata:
   checksum: 0a51ab1417cbf80fabcf7a406960a142663539c8140fdb0a187b78f3d708b9d137a62a4bc4e689150e290b667750ddabd1740a516623b0cb4adb6cc1962cfe2c
   languageName: node
   linkType: hard
-
-"eslint-config@workspace:^, eslint-config@workspace:src/configs/eslint":
-  version: 0.0.0-use.local
-  resolution: "eslint-config@workspace:src/configs/eslint"
-  dependencies:
-    eslint-plugin-react-hooks: "npm:^4.6.0"
-    eslint-plugin-react-refresh: "npm:^0.4.5"
-    typescript-eslint: "npm:^0.0.1-alpha.0"
-    yarn-upgrade-all: "npm:^0.7.2"
-  languageName: unknown
-  linkType: soft
 
 "eslint-plugin-eslint-comments@npm:^3.2.0":
   version: 3.2.0
@@ -9707,9 +9695,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"linux@workspace:src/targets/linux":
+"linux.rn-vite-tauri-workshop.workshops.utkusarioglu.com@workspace:src/targets/linux":
   version: 0.0.0-use.local
-  resolution: "linux@workspace:src/targets/linux"
+  resolution: "linux.rn-vite-tauri-workshop.workshops.utkusarioglu.com@workspace:src/targets/linux"
   dependencies:
     "@tamagui/vite-plugin": "npm:^1.82.9"
     "@tauri-apps/cli": "npm:^1.5.9"
@@ -9718,19 +9706,19 @@ __metadata:
     "@typescript-eslint/eslint-plugin": "npm:^6.18.0"
     "@typescript-eslint/parser": "npm:^6.18.0"
     "@vitejs/plugin-react": "npm:^4.2.1"
-    elements: "workspace:^"
+    config--eslint: "workspace:^"
+    config--typescript: "workspace:^"
     eslint: "npm:^8.56.0"
-    eslint-config: "workspace:^"
     eslint-plugin-react-hooks: "npm:^4.6.0"
     eslint-plugin-react-refresh: "npm:^0.4.5"
+    package--elements: "workspace:^"
+    package--xp-app: "workspace:^"
+    package--xp-navigation: "workspace:^"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     react-router-dom: "npm:^6.21.1"
-    tsconfig: "workspace:^"
     typescript: "npm:^5.3.3"
     vite: "npm:^5.0.11"
-    xp-app: "workspace:^"
-    xp-navigation: "workspace:^"
     yarn-upgrade-all: "npm:^0.7.2"
   languageName: unknown
   linkType: soft
@@ -10830,6 +10818,58 @@ __metadata:
   checksum: f8a8e9a7693659383f06aec604ad5ead237c7a261c18048a6e1b5b85a5f8a067e469aa24f5bc009b991ea3b058a87f5065ef4176793a200d4917349881216cae
   languageName: node
   linkType: hard
+
+"package--elements@workspace:^, package--elements@workspace:src/packages/elements":
+  version: 0.0.0-use.local
+  resolution: "package--elements@workspace:src/packages/elements"
+  dependencies:
+    "@tamagui/config": "npm:^1.82.9"
+    config--eslint: "workspace:^"
+    config--typescript: "workspace:^"
+    eslint: "npm:^8.56.0"
+    tamagui: "npm:^1.82.9"
+    typescript: "npm:^5.3.3"
+    yarn-upgrade-all: "npm:^0.7.2"
+  peerDependencies:
+    react: "*"
+    react-dom: "*"
+    react-native: "*"
+  languageName: unknown
+  linkType: soft
+
+"package--xp-app@workspace:^, package--xp-app@workspace:src/packages/xp-app":
+  version: 0.0.0-use.local
+  resolution: "package--xp-app@workspace:src/packages/xp-app"
+  dependencies:
+    "@babel/preset-typescript": "npm:^7.23.3"
+    "@jest/globals": "npm:^29.7.0"
+    config--eslint: "workspace:^"
+    config--typescript: "workspace:^"
+    eslint: "npm:^8.56.0"
+    jest: "npm:^29.7.0"
+    package--elements: "workspace:^"
+    package--xp-navigation: "workspace:^"
+    typescript: "npm:^5.3.3"
+    yarn-upgrade-all: "npm:^0.7.2"
+  peerDependencies:
+    react: "*"
+  languageName: unknown
+  linkType: soft
+
+"package--xp-navigation@workspace:^, package--xp-navigation@workspace:src/packages/xp-navigation":
+  version: 0.0.0-use.local
+  resolution: "package--xp-navigation@workspace:src/packages/xp-navigation"
+  dependencies:
+    "@babel/preset-typescript": "npm:^7.23.3"
+    "@jest/globals": "npm:^29.7.0"
+    config--eslint: "workspace:^"
+    config--typescript: "workspace:^"
+    eslint: "npm:^8.56.0"
+    jest: "npm:^29.7.0"
+    typescript: "npm:^5.3.3"
+    yarn-upgrade-all: "npm:^0.7.2"
+  languageName: unknown
+  linkType: soft
 
 "parent-module@npm:^1.0.0":
   version: 1.0.1
@@ -12226,17 +12266,17 @@ __metadata:
     "@typescript-eslint/eslint-plugin": "npm:^6.18.0"
     "@typescript-eslint/parser": "npm:^6.18.0"
     "@vitejs/plugin-react": "npm:^4.2.1"
-    elements: "workspace:^"
+    config--eslint: "workspace:^"
+    config--typescript: "workspace:^"
     eslint: "npm:^8.56.0"
-    eslint-config: "workspace:^"
+    package--elements: "workspace:^"
+    package--xp-app: "workspace:^"
+    package--xp-navigation: "workspace:^"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     react-router-dom: "npm:^6.21.1"
-    tsconfig: "workspace:^"
     typescript: "npm:^5.3.3"
     vite: "npm:^5.0.11"
-    xp-app: "workspace:^"
-    xp-navigation: "workspace:^"
     yarn-upgrade-all: "npm:^0.7.2"
   languageName: unknown
   linkType: soft
@@ -12267,18 +12307,18 @@ __metadata:
     "@typescript-eslint/eslint-plugin": "npm:^6.18.0"
     "@typescript-eslint/parser": "npm:^6.18.0"
     "@vitejs/plugin-react": "npm:^4.2.1"
-    elements: "workspace:^"
+    config--eslint: "workspace:^"
+    config--typescript: "workspace:^"
     eslint: "npm:^8.56.0"
-    eslint-config: "workspace:^"
+    package--elements: "workspace:^"
+    package--xp-app: "workspace:^"
+    package--xp-navigation: "workspace:^"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
-    tsconfig: "workspace:^"
     typescript: "npm:^5.3.3"
     vike: "npm:^0.4.156"
     vite: "npm:^5.0.11"
     vite-plugin-commonjs: "npm:^0.10.1"
-    xp-app: "workspace:^"
-    xp-navigation: "workspace:^"
     yarn-upgrade-all: "npm:^0.7.2"
   languageName: unknown
   linkType: soft
@@ -12758,12 +12798,6 @@ __metadata:
   checksum: 1350a5110eb1e534e9a6178f4081fb8a4fcc439749e19f4ad699baec9090fcb90fe532d5e191d91a062dc6e454a14a8d7eb2ad202f57135a30c4a44a3024f039
   languageName: node
   linkType: hard
-
-"tsconfig@workspace:^, tsconfig@workspace:src/configs/tsconfig":
-  version: 0.0.0-use.local
-  resolution: "tsconfig@workspace:src/configs/tsconfig"
-  languageName: unknown
-  linkType: soft
 
 "tslib@npm:^1.8.1":
   version: 1.14.1
@@ -13491,40 +13525,6 @@ __metadata:
   checksum: 171e35012934bd8788150a7f46f963e50bac43a4dc524ee714c20f258693ac4d3ba2abadb00838fdac42a47af9e958c7ae7e6f4bc56db047ba897b8a2268cf7c
   languageName: node
   linkType: hard
-
-"xp-app@workspace:^, xp-app@workspace:src/packages/xp-app":
-  version: 0.0.0-use.local
-  resolution: "xp-app@workspace:src/packages/xp-app"
-  dependencies:
-    "@babel/preset-typescript": "npm:^7.23.3"
-    "@jest/globals": "npm:^29.7.0"
-    elements: "workspace:^"
-    eslint: "npm:^8.56.0"
-    eslint-config: "workspace:^"
-    jest: "npm:^29.7.0"
-    tsconfig: "workspace:^"
-    typescript: "npm:^5.3.3"
-    xp-navigation: "workspace:^"
-    yarn-upgrade-all: "npm:^0.7.2"
-  peerDependencies:
-    react: "*"
-  languageName: unknown
-  linkType: soft
-
-"xp-navigation@workspace:^, xp-navigation@workspace:src/packages/xp-navigation":
-  version: 0.0.0-use.local
-  resolution: "xp-navigation@workspace:src/packages/xp-navigation"
-  dependencies:
-    "@babel/preset-typescript": "npm:^7.23.3"
-    "@jest/globals": "npm:^29.7.0"
-    eslint: "npm:^8.56.0"
-    eslint-config: "workspace:^"
-    jest: "npm:^29.7.0"
-    tsconfig: "workspace:^"
-    typescript: "npm:^5.3.3"
-    yarn-upgrade-all: "npm:^0.7.2"
-  languageName: unknown
-  linkType: soft
 
 "xtend@npm:~4.0.1":
   version: 4.0.2

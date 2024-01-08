@@ -1,5 +1,5 @@
 {
-  "name": "xp-navigation",
+  "name": "package--xp-navigation",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,10 +11,10 @@
   "devDependencies": {
     "@babel/preset-typescript": "^7.23.3",
     "@jest/globals": "^29.7.0",
+    "config--eslint": "workspace:^",
+    "config--typescript": "workspace:^",
     "eslint": "^8.56.0",
-    "eslint-config": "workspace:^",
     "jest": "^29.7.0",
-    "tsconfig": "workspace:^",
     "typescript": "^5.3.3",
     "yarn-upgrade-all": "^0.7.2"
   },

@@ -1,1 +1,1 @@
-export { CounterScreen as Page } from "xp-app/screens";
+export { CounterScreen as Page } from "package--xp-app/screens";

@@ -1,7 +1,7 @@
 import linuxTamaguiConfig from "#/tamagui.config.mts";
 import { LinuxCounterScreen } from "#screens/Counter.screen.tsx";
 import { LinuxHomeScreen } from "#screens/Home.screen.tsx";
-import { ElementsProvider } from "elements";
+import { ElementsProvider } from "package--elements";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([

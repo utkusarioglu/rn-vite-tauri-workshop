@@ -1,5 +1,5 @@
 {
-  "name": "elements",
+  "name": "package--elements",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -32,9 +32,9 @@
     "react-native": "*"
   },
   "devDependencies": {
+    "config--eslint": "workspace:^",
+    "config--typescript": "workspace:^",
     "eslint": "^8.56.0",
-    "eslint-config": "workspace:^",
-    "tsconfig": "workspace:^",
     "typescript": "^5.3.3",
     "yarn-upgrade-all": "^0.7.2"
   }

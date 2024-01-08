@@ -1,3 +1,3 @@
-const eslintVite = require("eslint-config/vite");
+const eslintVite = require("config--eslint/vite");
 
 module.exports = [...eslintVite];

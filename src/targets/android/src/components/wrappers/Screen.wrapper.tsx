@@ -1,6 +1,6 @@
 import type { FC, PropsWithChildren } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { Navigation } from "xp-navigation";
+import { Navigation } from "package--xp-navigation";
 
 type ScreenWrapperProps = PropsWithChildren;
 

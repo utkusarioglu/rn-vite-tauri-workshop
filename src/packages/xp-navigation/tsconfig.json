@@ -1,5 +1,5 @@
 {
-  "extends": "tsconfig/tsconfig.package.json",
+  "extends": "config--typescript/tsconfig.package.json",
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "dist",
@@ -21,7 +21,7 @@
     // "allowImportingTsExtensions": true,
 
     "paths": {
-      "elements": ["../../packages/elements"]
+      "package--elements": ["../../packages/elements"]
     }
   },
   "include": ["src"],

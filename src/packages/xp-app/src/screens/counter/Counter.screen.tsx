@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Paragraph, DefaultButton, Section, H1 } from "elements";
-import { Navigation } from "xp-navigation";
+import { Paragraph, DefaultButton, Section, H1 } from "package--elements";
+import { Navigation } from "package--xp-navigation";
 
 function useCounter(startValue: number) {
   const [count, setCount] = useState(startValue);

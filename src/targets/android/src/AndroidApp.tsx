@@ -14,7 +14,7 @@ import {
   // StyleSheet,
 } from "react-native";
 
-import { ElementsProvider, useTheme } from "elements";
+import { ElementsProvider, useTheme } from "package--elements";
 import androidTamaguiConfig from "#/tamagui.config.mts";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { RootNavigator } from "#navigators/root/Root.navigator.tsx";

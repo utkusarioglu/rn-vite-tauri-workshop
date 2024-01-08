@@ -1,5 +1,5 @@
 {
-  "extends": "tsconfig/tsconfig.package.json",
+  "extends": "config--typescript/tsconfig.package.json",
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "dist",
@@ -21,8 +21,8 @@
     // "allowImportingTsExtensions": true,
 
     "paths": {
-      "elements": ["../../packages/elements"],
-      "xp-navigation": ["../../packages/xp-navigation"]
+      "package--elements": ["../../packages/elements"],
+      "package--xp-navigation": ["../../packages/xp-navigation"]
     }
   },
   "include": ["src"],

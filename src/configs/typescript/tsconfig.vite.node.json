@@ -1,5 +1,5 @@
 {
-  "extends": "./tsconfig.app.json",
+  "extends": "./tsconfig.target.json",
   "compilerOptions": {
     "skipLibCheck": true,
     "target": "ESNext",

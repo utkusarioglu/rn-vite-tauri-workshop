@@ -1,4 +1,4 @@
-import type { linuxTamaguiConfig } from "../../../tamagui.config.mts";
+import type { linuxTamaguiConfig } from "#/tamagui.config.mts";
 
 export type LinuxTamaguiConfig = typeof linuxTamaguiConfig;
 

@@ -1,11 +1,11 @@
-import { hydrateRoot, createRoot } from "react-dom/client";
-import type { Root } from "react-dom/client";
-import { PageLayout } from "./PageLayout.tsx";
-import type { OnRenderClientAsync } from "vike/types";
-import { ElementsProvider } from "elements";
 import ssrTamaguiConfig from "#/tamagui.config.mts";
-import { Navigation } from "xp-navigation";
+import type { Root } from "react-dom/client";
+import { createRoot, hydrateRoot } from "react-dom/client";
 import { navigate } from "vike/client/router";
+import type { OnRenderClientAsync } from "vike/types";
+import { ElementsProvider } from "package--elements";
+import { Navigation } from "package--xp-navigation";
+import { PageLayout } from "./PageLayout.tsx";
 
 Navigation.setPathTransformer((path, options = {}) => ({ path, options }));
 Navigation.setHandlers({

@@ -1,10 +1,10 @@
-import "elements/css-reset";
-import "#/src/styles/index.css";
+import "package--elements/css-reset";
+import "#styles/index.css";
 import ReactDOMServer from "react-dom/server";
 import { PageLayout } from "./PageLayout.tsx";
 import { escapeInject, dangerouslySkipEscape } from "vike/server";
 import type { OnRenderHtmlAsync } from "vike/types";
-import { ElementsProvider } from "elements";
+import { ElementsProvider } from "package--elements";
 import ssrTamaguiConfig from "#/tamagui.config.mts";
 
 /**

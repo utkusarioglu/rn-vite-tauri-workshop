@@ -1,7 +1,7 @@
 import { ScreenWrapper } from "#wrappers/Screen.wrapper.tsx";
 import { Button } from "react-native";
-import { HomeScreen } from "xp-app/screens";
-import { Navigation } from "xp-navigation";
+import { HomeScreen } from "package--xp-app/screens";
+import { Navigation } from "package--xp-navigation";
 
 export const AndroidHomeScreen = () => {
   return (

@@ -1,7 +1,7 @@
 import spaTamaguiConfig from "#/tamagui.config.mts";
 import { SpaHomeScreen } from "#screens/Home.screen.tsx";
 import { SpaCounterScreen } from "#screens/Counter.screen.tsx";
-import { ElementsProvider } from "elements";
+import { ElementsProvider } from "package--elements";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
