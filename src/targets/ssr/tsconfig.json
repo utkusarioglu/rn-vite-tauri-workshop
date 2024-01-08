@@ -3,15 +3,17 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "#/*": ["./*"],
+      "xp-navigation": ["../../packages/xp-navigation"],
       "xp-app": ["../../packages/xp-app"],
-      "elements": ["../../packages/elements"]
+      "elements": ["../../packages/elements"],
+      "#/*": ["./*"]
     }
   },
   "include": ["src"],
   "exclude": ["dist", "build", "node_modules"],
   "references": [
     { "path": "./tsconfig.node.json" },
+    { "path": "../../packages/xp-navigation" },
     { "path": "../../packages/xp-app" },
     { "path": "../../packages/elements" }
   ]

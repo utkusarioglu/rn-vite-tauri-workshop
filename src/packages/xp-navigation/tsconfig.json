@@ -21,14 +21,14 @@
     // "allowImportingTsExtensions": true,
 
     "paths": {
-      "elements": ["../../packages/elements"],
-      "xp-navigation": ["../../packages/xp-navigation"]
+      "elements": ["../../packages/elements"]
     }
   },
   "include": ["src"],
   "exclude": ["dist", "build", "node_modules"],
   "references": [
-    { "path": "../../packages/elements" },
-    { "path": "../../packages/xp-navigation" }
+    {
+      "path": "../../packages/elements"
+    }
   ]
 }

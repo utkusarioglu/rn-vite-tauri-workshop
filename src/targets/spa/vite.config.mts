@@ -21,6 +21,7 @@ export default defineConfig({
 
   resolve: {
     alias: {
+      "#wrappers": join(__dirname, "src/components/wrappers"),
       "#screens": join(__dirname, "src/components/screens"),
       "#": __dirname,
     },

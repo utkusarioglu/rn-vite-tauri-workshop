@@ -1,3 +1,4 @@
+import { join } from "node:path";
 import { UserConfig, defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { prepareTamaguiVitePlugins } from "elements/vite";
@@ -39,14 +40,12 @@ const tauriConfig: Partial<UserConfig> = {
 };
 
 export default defineConfig({
-  server: {
-    port: 4000,
-  },
-
   plugins: [react(), ...tamaguiVitePlugins],
 
   resolve: {
     alias: {
+      "#wrappers": join(__dirname, "src/components/wrappers"),
+      "#screens": join(__dirname, "src/components/screens"),
       "#": __dirname,
     },
   },

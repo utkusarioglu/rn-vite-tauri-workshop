@@ -1,14 +1,13 @@
-import { useNavigation } from "@react-navigation/native";
+import { Navigation } from "xp-navigation";
+import { ScreenWrapper } from "#wrappers/Screen.wrapper.tsx";
 import { Button } from "react-native";
 import { CounterScreen } from "xp-app/screens";
 
 export const AndroidCounterScreen = () => {
-  const navigation = useNavigation();
-
   return (
-    <>
-      <Button title="home" onPress={() => navigation.push("home")} />
+    <ScreenWrapper>
+      <Button title="home" onPress={() => Navigation.push("/")} />
       <CounterScreen />
-    </>
+    </ScreenWrapper>
   );
 };

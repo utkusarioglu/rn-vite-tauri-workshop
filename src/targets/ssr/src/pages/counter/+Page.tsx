@@ -1,3 +1,1 @@
-import { CounterScreen } from "xp-app/screens";
-
-export const Page = CounterScreen;
+export { CounterScreen as Page } from "xp-app/screens";

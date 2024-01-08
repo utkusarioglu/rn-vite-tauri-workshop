@@ -7,14 +7,17 @@
     "allowImportingTsExtensions": true,
 
     "paths": {
-      "#/*": ["./*"],
-      "#navigators*": ["./src/components/navigators/*"],
-      "#screens*": ["./src/components/screens/*"],
+      "xp-navigation": ["../../packages/xp-navigation"],
       "xp-app": ["../../packages/xp-app"],
-      "elements": ["../../packages/elements"]
+      "elements": ["../../packages/elements"],
+      "#wrappers/*": ["./src/components/wrappers/*"],
+      "#screens/*": ["./src/components/screens/*"],
+      "#navigators/*": ["./src/components/navigators/*"],
+      "#/*": ["./*"]
     }
   },
   "references": [
+    { "path": "../../packages/xp-navigation" },
     { "path": "../../packages/xp-app" },
     { "path": "../../packages/elements" }
   ]

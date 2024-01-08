@@ -1,14 +1,13 @@
-import { useNavigation } from "@react-navigation/native";
+import { ScreenWrapper } from "#wrappers/Screen.wrapper.tsx";
 import { Button } from "react-native";
 import { HomeScreen } from "xp-app/screens";
+import { Navigation } from "xp-navigation";
 
 export const AndroidHomeScreen = () => {
-  const navigation = useNavigation();
-
   return (
-    <>
-      <Button title="counter" onPress={() => navigation.push("counter")} />
+    <ScreenWrapper>
+      <Button title="home" onPress={() => Navigation.push("/counter")} />
       <HomeScreen />
-    </>
+    </ScreenWrapper>
   );
 };

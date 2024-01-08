@@ -1,6 +1,19 @@
-import { HomeScreen } from "xp-app/screens";
 import linuxTamaguiConfig from "#/tamagui.config.mts";
+import { LinuxCounterScreen } from "#screens/Counter.screen.tsx";
+import { LinuxHomeScreen } from "#screens/Home.screen.tsx";
 import { ElementsProvider } from "elements";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <LinuxHomeScreen />,
+  },
+  {
+    path: "/counter",
+    element: <LinuxCounterScreen />,
+  },
+]);
 
 /**
  * @dev
@@ -16,7 +29,7 @@ export const LinuxApp = () => {
       defaultTheme={prefersDark ? "dark" : "light"}
       disableRootThemeClass
     >
-      <HomeScreen />
+      <RouterProvider router={router} />
     </ElementsProvider>
   );
 };

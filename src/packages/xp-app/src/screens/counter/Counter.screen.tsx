@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Paragraph, DefaultButton, Section, H1 } from "elements";
+import { Navigation } from "xp-navigation";
 
 function useCounter(startValue: number) {
   const [count, setCount] = useState(startValue);
@@ -29,6 +30,7 @@ export function CounterScreen() {
       <Paragraph>Count: {count}</Paragraph>
       <DefaultButton onPress={increment}>Increment</DefaultButton>
       <DefaultButton onPress={decrement}>decrement</DefaultButton>
+      <DefaultButton onPress={() => Navigation.push("/")}>home</DefaultButton>
     </Section>
   );
 }

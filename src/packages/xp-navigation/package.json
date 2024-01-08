@@ -1,18 +1,12 @@
 {
-  "name": "xp-app",
+  "name": "xp-navigation",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "main": "src/XpApp.tsx",
-  "types": "src/XpApp.tsx",
   "exports": {
-    "./screens": {
-      "import": "./src/screens/exports.mts"
+    ".": {
+      "import": "./src/exports.mts"
     }
-  },
-  "dependencies": {
-    "elements": "workspace:^",
-    "xp-navigation": "workspace:^"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.23.3",
@@ -23,9 +17,6 @@
     "tsconfig": "workspace:^",
     "typescript": "^5.3.3",
     "yarn-upgrade-all": "^0.7.2"
-  },
-  "peerDependencies": {
-    "react": "*"
   },
   "scripts": {
     "test": "jest",

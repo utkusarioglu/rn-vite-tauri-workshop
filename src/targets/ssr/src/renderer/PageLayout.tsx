@@ -10,15 +10,8 @@ export const PageLayout: FC<PropsWithChildren<PageLayoutProps>> = ({
 }) => {
   return (
     <>
-      <div>
-        <a className="navitem" href="/">
-          Home
-        </a>
-        <a className="navitem" href="/counter">
-          Counter
-        </a>
-      </div>
       {children}
+      <div style={{ textAlign: "center" }}>- end of page -</div>
     </>
   );
 };

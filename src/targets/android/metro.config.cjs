@@ -8,10 +8,6 @@ const nodeModulesPath = path.resolve(repoRoot, "node_modules");
 
 const PATH_ALIASES = [
   {
-    startsWith: "#/",
-    replace: `${__dirname}/`,
-  },
-  {
     startsWith: "#screens/",
     replace: `${__dirname}/src/components/screens/`,
   },
@@ -20,8 +16,16 @@ const PATH_ALIASES = [
     replace: `${__dirname}/src/components/navigators/`,
   },
   {
+    startsWith: "#wrappers/",
+    replace: `${__dirname}/src/components/wrappers/`,
+  },
+  {
     startsWith: "#types/",
     replace: `${__dirname}/src/types/`,
+  },
+  {
+    startsWith: "#/",
+    replace: `${__dirname}/`,
   },
 ];
 
