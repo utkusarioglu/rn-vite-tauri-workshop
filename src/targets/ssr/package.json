@@ -20,7 +20,7 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
-    "@tamagui/vite-plugin": "^1.82.8",
+    "@tamagui/vite-plugin": "^1.82.9",
     "@types/react": "^18.2.47",
     "@types/react-dom": "^18.2.18",
     "@typescript-eslint/eslint-plugin": "^6.18.0",
@@ -30,7 +30,7 @@
     "eslint-config": "workspace:^",
     "tsconfig": "workspace:^",
     "typescript": "^5.3.3",
-    "vike": "^0.4.154",
+    "vike": "^0.4.156",
     "vite": "^5.0.11",
     "vite-plugin-commonjs": "^0.10.1",
     "yarn-upgrade-all": "^0.7.2"

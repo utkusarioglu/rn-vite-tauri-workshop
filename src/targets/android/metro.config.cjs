@@ -40,7 +40,10 @@ const config = {
 
   resolver: {
     sourceExts: ["js", "jsx", "json", "ts", "tsx", "mts", "mjs", "cjs"],
+
     unstable_enablePackageExports: true,
+    // unstable_conditionNames: ["react-native", "import", "require"],
+    // unstable_conditionNames: ["react-native", "require", "import"],
 
     resolveRequest: (context, moduleName, platform) => {
       for (const alias of PATH_ALIASES) {

@@ -36,7 +36,7 @@
     "@react-native/eslint-config": "^0.74.0",
     "@react-native/metro-config": "^0.73.2",
     "@react-native/typescript-config": "^0.74.0",
-    "@tamagui/babel-plugin": "^1.82.8",
+    "@tamagui/babel-plugin": "^1.82.9",
     "@types/react": "^18.2.47",
     "@types/react-test-renderer": "^18.0.7",
     "babel-jest": "^29.7.0",
