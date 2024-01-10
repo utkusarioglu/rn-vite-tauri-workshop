@@ -1,8 +1,10 @@
 import { HomeScreen } from "package--xp-app/screens";
-import { ScreenWrapper } from "#wrappers/Screen.wrapper.tsx";
+import { screenHoc } from "#hocs/Screen.hoc.tsx";
 
-export const SpaHomeScreen = () => (
-  <ScreenWrapper>
-    <HomeScreen />
-  </ScreenWrapper>
-);
+// export const SpaHomeScreen = () => (
+//   <ScreenWrapper>
+//     <HomeScreen />
+//   </ScreenWrapper>
+// );
+
+export const SpaHomeScreen = screenHoc(HomeScreen);

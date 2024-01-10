@@ -16,8 +16,8 @@ const PATH_ALIASES = [
     replace: `${__dirname}/src/components/navigators/`,
   },
   {
-    startsWith: "#wrappers/",
-    replace: `${__dirname}/src/components/wrappers/`,
+    startsWith: "#hocs/",
+    replace: `${__dirname}/src/components/hocs/`,
   },
   {
     startsWith: "#types/",

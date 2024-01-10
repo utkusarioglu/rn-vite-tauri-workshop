@@ -1,14 +1,14 @@
 type PathTransformerReturn = {
   path: string;
-  options: Record<string, unknown>;
+  params: Record<string, unknown>;
 };
 
 export type PathTransformer = (
   rawPath: string,
-  options?: PusherOptions,
+  params?: PusherOptions,
 ) => PathTransformerReturn;
 
-type Pusher = (href: PusherHref, options?: PusherOptions) => void;
+type Pusher = (href: PusherHref, params?: PusherOptions) => void;
 
 export interface Handlers {
   push: Pusher;

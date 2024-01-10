@@ -1,9 +1,10 @@
 import { useState } from "react";
+import type { FC } from "react";
 import { Paragraph, DefaultButton, Section, H1 } from "package--elements";
 import { Navigation } from "package--xp-navigation";
 
-function useCounter(startValue: number) {
-  const [count, setCount] = useState(startValue);
+function useCounter(initialValue: number) {
+  const [count, setCount] = useState(initialValue);
 
   const incrementOnPress = () => {
     console.log("increment");
@@ -21,8 +22,12 @@ function useCounter(startValue: number) {
   };
 }
 
-export function CounterScreen() {
-  const { count, increment, decrement } = useCounter(0);
+export interface CounterScreenProps {
+  initialValue: number;
+}
+
+export const CounterScreen: FC<CounterScreenProps> = ({ initialValue }) => {
+  const { count, increment, decrement } = useCounter(initialValue);
 
   return (
     <Section>
@@ -33,4 +38,4 @@ export function CounterScreen() {
       <DefaultButton onPress={() => Navigation.push("/")}>home</DefaultButton>
     </Section>
   );
-}
+};

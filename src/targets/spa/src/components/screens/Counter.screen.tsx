@@ -1,8 +1,12 @@
 import { CounterScreen } from "package--xp-app/screens";
-import { ScreenWrapper } from "#wrappers/Screen.wrapper.tsx";
+import { screenHoc } from "#hocs/Screen.hoc.tsx";
 
-export const SpaCounterScreen = () => (
-  <ScreenWrapper>
-    <CounterScreen />
-  </ScreenWrapper>
-);
+// export const SpaCounterScreen = () => (
+//   <ScreenWrapper>
+//     <CounterScreen />
+//   </ScreenWrapper>
+// );
+
+export const SpaCounterScreen = screenHoc((props) => (
+  <CounterScreen {...props} />
+));

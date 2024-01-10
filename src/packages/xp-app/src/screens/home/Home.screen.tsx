@@ -6,7 +6,10 @@ export const HomeScreen = () => {
     <Section>
       <H1>Home</H1>
       <Paragraph>This is supposed to be the home screen</Paragraph>
-      <DefaultButton onPress={() => Navigation.push("/counter")}>
+      <DefaultButton
+        // onPress={() => Navigation.push("/counter?initialValue=55")}
+        onPress={() => Navigation.push("/counter", { initialValue: 56 })}
+      >
         counter
       </DefaultButton>
     </Section>

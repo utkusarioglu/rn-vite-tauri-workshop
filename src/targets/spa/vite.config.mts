@@ -1,4 +1,4 @@
-import { join, resolve } from "node:path";
+import { join } from "node:path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { prepareTamaguiVitePlugins } from "package--elements/vite";
@@ -26,8 +26,8 @@ export default defineConfig({
         replacement: join(__dirname, "src/styles/"),
       },
       {
-        find: /^#wrappers\//,
-        replacement: join(__dirname, "src/components/wrappers/"),
+        find: /^#hocs\//,
+        replacement: join(__dirname, "src/components/hocs/"),
       },
       {
         find: /^#screens/,

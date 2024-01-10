@@ -10,7 +10,7 @@
       "package--xp-navigation": ["../../packages/xp-navigation"],
       "package--xp-app": ["../../packages/xp-app"],
       "package--elements": ["../../packages/elements"],
-      "#wrappers/*": ["./src/components/wrappers/*"],
+      "#hocs/*": ["src/components/hocs/*"],
       "#screens/*": ["./src/components/screens/*"],
       "#navigators/*": ["./src/components/navigators/*"],
       "#/*": ["./*"]

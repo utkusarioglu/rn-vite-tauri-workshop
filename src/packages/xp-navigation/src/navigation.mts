@@ -29,11 +29,11 @@ export class Navigation {
   }
 
   static push(rawHref: PusherHref, rawOptions?: PusherOptions): void {
-    const { path, options } = Navigation.getPathTransformer()(
+    const { path, params } = Navigation.getPathTransformer()(
       rawHref,
       rawOptions,
     );
-    console.log({ path, options, rawOptions, rawHref });
-    Navigation.handlers.push(path, options);
+    console.log({ path, params, rawOptions, rawHref });
+    Navigation.handlers.push(path, params);
   }
 }
