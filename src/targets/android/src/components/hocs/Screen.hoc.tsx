@@ -1,32 +1,31 @@
 import { type FC } from "react";
-import { Navigation } from "package--xp-navigation";
+import {
+  Navigation,
+  reactNavigationPathTransformerFactory,
+} from "package--xp-navigation";
 import type {
   StackKeys,
   ScreenProps,
 } from "#navigators/root/Root.navigator.types.mts";
 
-Navigation.setPathTransformer((path, params = {}) => {
-  if (path.startsWith("/")) {
-    path = path.slice(1);
-  }
+const WEB_APP_URL = process.env.WEB_APP_URL;
 
-  if (!path.length) {
-    return { path: "home", params };
-  }
-
-  return {
-    path,
-    params,
-  };
-});
+/**
+ * @dev
+ * 1- TODO type inconsistency between xp-navigation and react navigation
+ */
+// TODO this needs to work with full urls
+Navigation.setPathTransformer(
+  reactNavigationPathTransformerFactory(WEB_APP_URL, "home"),
+);
 
 type ScreenHoc = <T extends StackKeys>(
   Children: FC<ScreenProps<T>["route"]["params"]>,
 ) => FC<ScreenProps<T>>;
 
 export const screenHoc: ScreenHoc = (Screen) => (props) => {
-  console.log({ params: props.route });
   Navigation.setHandlers({
+    // @ts-expect-error: #1
     push: props.navigation.push,
   });
 

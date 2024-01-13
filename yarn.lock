@@ -10837,6 +10837,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"package--url-parser@workspace:^, package--url-parser@workspace:src/packages/url-parser":
+  version: 0.0.0-use.local
+  resolution: "package--url-parser@workspace:src/packages/url-parser"
+  dependencies:
+    "@babel/preset-typescript": "npm:^7.23.3"
+    "@jest/globals": "npm:^29.7.0"
+    config--eslint: "workspace:^"
+    config--typescript: "workspace:^"
+    eslint: "npm:^8.56.0"
+    jest: "npm:^29.7.0"
+    typescript: "npm:^5.3.3"
+    yarn-upgrade-all: "npm:^0.7.2"
+  languageName: unknown
+  linkType: soft
+
 "package--xp-app@workspace:^, package--xp-app@workspace:src/packages/xp-app":
   version: 0.0.0-use.local
   resolution: "package--xp-app@workspace:src/packages/xp-app"
@@ -10866,6 +10881,7 @@ __metadata:
     config--typescript: "workspace:^"
     eslint: "npm:^8.56.0"
     jest: "npm:^29.7.0"
+    package--url-parser: "workspace:^"
     typescript: "npm:^5.3.3"
     yarn-upgrade-all: "npm:^0.7.2"
   languageName: unknown

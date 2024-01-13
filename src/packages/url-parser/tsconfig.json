@@ -1,0 +1,10 @@
+{
+  "extends": "config--typescript/tsconfig.package.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist",
+    "skipLibCheck": true
+  },
+  "include": ["src"],
+  "exclude": ["dist", "build", "node_modules"]
+}

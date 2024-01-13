@@ -1,5 +1,5 @@
 {
-  "name": "package--xp-navigation",
+  "name": "package--url-parser",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,9 +7,6 @@
     ".": {
       "import": "./src/exports.mts"
     }
-  },
-  "dependencies": {
-    "package--url-parser": "workspace:^"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.23.3",

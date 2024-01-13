@@ -1,11 +1,10 @@
-import "package--elements/css-reset";
-import "#styles/index.css";
 import ReactDOMServer from "react-dom/server";
-import { PageLayout } from "./PageLayout.tsx";
 import { escapeInject, dangerouslySkipEscape } from "vike/server";
 import type { OnRenderHtmlAsync } from "vike/types";
-import { ElementsProvider } from "package--elements";
 import ssrTamaguiConfig from "#/tamagui.config.mts";
+import { ThemedApp } from "./ThemedApp.tsx";
+import { NO_PAGE_ERROR } from "#/src/errors.mts";
+import { parseSearchParams } from "package--url-parser";
 
 /**
  * @dev
@@ -14,28 +13,24 @@ import ssrTamaguiConfig from "#/tamagui.config.mts";
 export const onRenderHtml: OnRenderHtmlAsync = async (
   pageContext,
 ): ReturnType<OnRenderHtmlAsync> => {
-  // @ts-expect-error: #1
-  const { Page, pageProps } = pageContext;
-  // This onRenderHtml() hook only supports SSR, see https://vike.dev/render-modes for how to modify
-  // onRenderHtml() to support SPA
-  if (!Page)
-    throw new Error("My render() hook expects pageContext.Page to be defined");
+  const {
+    Page,
+    // @ts-expect-error
+    pageProps,
+    urlParsed: { searchOriginal },
+  } = pageContext;
 
-  const prefersDark = false;
+  if (!Page) {
+    throw new Error(NO_PAGE_ERROR);
+  }
+
+  const props = parseSearchParams(
+    pageProps,
+    new URLSearchParams(searchOriginal || ""),
+  );
 
   const pageHtml = ReactDOMServer.renderToString(
-    <ElementsProvider
-      config={ssrTamaguiConfig}
-      /* @ts-expect-error: #1 */
-      defaultTheme={prefersDark ? "dark" : "light"}
-      disableInjectCSS
-      disableRootThemeClass
-    >
-      <PageLayout pageContext={pageContext}>
-        {/* @ts-expect-error: #1 */}
-        <Page {...pageProps} />
-      </PageLayout>
-    </ElementsProvider>,
+    <ThemedApp pageContext={pageContext} props={props} prefersDark={false} />,
   );
 
   // See https://vike.dev/head
@@ -68,6 +63,7 @@ export const onRenderHtml: OnRenderHtmlAsync = async (
       // @ts-expect-error
       pageProps: {
         // passToClient: true,
+        ...props,
       },
       // bunnies: "yes",
       // We can add some `pageContext` here, which is useful if we want to do page redirection https://vike.dev/page-redirection

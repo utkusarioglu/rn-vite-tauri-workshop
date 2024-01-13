@@ -21,14 +21,14 @@
     // "allowImportingTsExtensions": true,
 
     "paths": {
-      "package--elements": ["../../packages/elements"]
+      "package--url-parser": ["../../packages/url-parser"]
     }
   },
   "include": ["src"],
   "exclude": ["dist", "build", "node_modules"],
   "references": [
     {
-      "path": "../../packages/elements"
+      "path": "../../packages/url-parser"
     }
   ]
 }

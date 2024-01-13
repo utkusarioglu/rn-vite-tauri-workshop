@@ -8,6 +8,7 @@ export const PageLayout: FC<PropsWithChildren<PageLayoutProps>> = ({
   children,
   // pageContext,
 }) => {
+  // console.log({ pageContext });
   return (
     <>
       {children}

@@ -1,4 +1,4 @@
-type PathTransformerReturn = {
+export type PathTransformerReturn = {
   path: string;
   params: Record<string, unknown>;
 };
@@ -8,6 +8,8 @@ export type PathTransformer = (
   params?: PusherOptions,
 ) => PathTransformerReturn;
 
+export type PathTransformerParams = Parameters<PathTransformer>;
+
 type Pusher = (href: PusherHref, params?: PusherOptions) => void;
 
 export interface Handlers {
@@ -16,3 +18,7 @@ export interface Handlers {
 
 export type PusherHref = string;
 export type PusherOptions = Record<string, any>;
+
+// TODO this type need to be corrected once the logging infrastructure is in
+// place
+export type Logger = (log: any) => void;

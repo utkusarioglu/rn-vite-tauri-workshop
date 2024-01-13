@@ -15,7 +15,8 @@
     "package--xp-app": "workspace:^",
     "package--xp-navigation": "workspace:^",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "package--url-parser": "workspace:^"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.7",

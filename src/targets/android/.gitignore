@@ -66,3 +66,9 @@ yarn-error.log
 /coverage
 
 /.tamagui
+
+# Environment variable files
+.env
+.env.*
+!.env.*.example
+!.env.example

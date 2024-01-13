@@ -8,7 +8,9 @@ export const HomeScreen = () => {
       <Paragraph>This is supposed to be the home screen</Paragraph>
       <DefaultButton
         // onPress={() => Navigation.push("/counter?initialValue=55")}
-        onPress={() => Navigation.push("/counter", { initialValue: 56 })}
+        onPress={() =>
+          Navigation.push("/counter", { initialValue: 56, hash: "tiger" })
+        }
       >
         counter
       </DefaultButton>

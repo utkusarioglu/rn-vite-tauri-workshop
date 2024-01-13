@@ -3,6 +3,7 @@ import type {
   PathTransformer,
   PusherHref,
   PusherOptions,
+  Logger,
 } from "./navigation.types.mts";
 
 export class Navigation {
@@ -12,9 +13,18 @@ export class Navigation {
     },
   };
   static pathTransformer: PathTransformer | undefined;
+  static logger: Logger | undefined;
 
   static setHandlers(handlers: Handlers) {
     Navigation.handlers = handlers;
+  }
+
+  static setLogger(logger: Logger): void {
+    Navigation.logger = logger;
+  }
+
+  static log(...logParams: Parameters<Logger>): void {
+    Navigation.logger && Navigation.logger(...logParams);
   }
 
   static setPathTransformer(transformer: PathTransformer): void {
@@ -28,12 +38,12 @@ export class Navigation {
     return Navigation.pathTransformer;
   }
 
-  static push(rawHref: PusherHref, rawOptions?: PusherOptions): void {
+  static push(rawHref: PusherHref, rawParams?: PusherOptions): void {
     const { path, params } = Navigation.getPathTransformer()(
       rawHref,
-      rawOptions,
+      rawParams,
     );
-    console.log({ path, params, rawOptions, rawHref });
+    Navigation.log({ path, params, rawParams, rawHref });
     Navigation.handlers.push(path, params);
   }
 }

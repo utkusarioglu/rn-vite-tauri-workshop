@@ -24,10 +24,15 @@ function useCounter(initialValue: number) {
 
 export interface CounterScreenProps {
   initialValue: number;
+  hash?: string;
 }
 
-export const CounterScreen: FC<CounterScreenProps> = ({ initialValue }) => {
+export const CounterScreen: FC<CounterScreenProps> = ({
+  initialValue,
+  hash = "",
+}) => {
   const { count, increment, decrement } = useCounter(initialValue);
+  console.log({ hash });
 
   return (
     <Section>

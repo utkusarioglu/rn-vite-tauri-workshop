@@ -6,11 +6,9 @@ import { Button } from "react-native";
 export const AndroidHomeScreen = screenHoc<"home">(() => (
   <>
     <Button
-      title="home"
+      title="Counter"
       onPress={() =>
-        Navigation.push("/counter", {
-          initialValue: Math.round(Math.random() * 10),
-        })
+        Navigation.push("/counter?initialValue=67&cat-eats=bunny#bunnies")
       }
     />
     <HomeScreen />

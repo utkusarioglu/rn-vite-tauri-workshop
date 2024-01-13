@@ -1,13 +1,13 @@
-import ssrTamaguiConfig from "#/tamagui.config.mts";
 import type { Root } from "react-dom/client";
 import { createRoot, hydrateRoot } from "react-dom/client";
 import { navigate } from "vike/client/router";
 import type { OnRenderClientAsync } from "vike/types";
-import { ElementsProvider } from "package--elements";
-import { Navigation } from "package--xp-navigation";
-import { PageLayout } from "./PageLayout.tsx";
+import { Navigation, browserPathTransformer } from "package--xp-navigation";
+import { ThemedApp } from "./ThemedApp.tsx";
+import { NO_PAGE_ERROR, NO_CONTAINER_ERROR } from "#/src/errors.mts";
+import { parseSearchParams } from "package--url-parser";
 
-Navigation.setPathTransformer((path, options = {}) => ({ path, options }));
+Navigation.setPathTransformer(browserPathTransformer);
 Navigation.setHandlers({
   push: navigate,
 });
@@ -21,30 +21,30 @@ let root: Root | undefined;
 export const onRenderClient: OnRenderClientAsync = async (
   pageContext,
 ): ReturnType<OnRenderClientAsync> => {
-  // @ts-expect-error: #1
-  const { Page, pageProps } = pageContext;
-  if (!Page)
-    throw new Error(
-      "Client-side render() hook expects pageContext.Page to be defined",
-    );
-  const container = document.getElementById("react-root");
-  if (!container) throw new Error("DOM element #react-root not found");
+  const {
+    Page,
+    // @ts-expect-error
+    pageProps,
+    // routeParams,
+    urlParsed: { searchOriginal, hash },
+  } = pageContext;
 
-  const prefersDark = false;
+  if (!Page) {
+    throw new Error(NO_PAGE_ERROR);
+  }
+
+  const props = {
+    ...parseSearchParams(pageProps, new URLSearchParams(searchOriginal || "")),
+    hash,
+  };
+
+  const container = document.getElementById("react-root");
+  if (!container) {
+    throw new Error(NO_CONTAINER_ERROR);
+  }
 
   const component = (
-    <ElementsProvider
-      config={ssrTamaguiConfig}
-      /* @ts-expect-error: #1 */
-      defaultTheme={prefersDark ? "dark" : "light"}
-      disableInjectCSS
-      disableRootThemeClass
-    >
-      <PageLayout pageContext={pageContext}>
-        {/* @ts-expect-error: #1 */}
-        <Page {...pageProps} />
-      </PageLayout>
-    </ElementsProvider>
+    <ThemedApp pageContext={pageContext} props={props} prefersDark={false} />
   );
 
   if (container.innerHTML === "" || !pageContext.isHydration) {
