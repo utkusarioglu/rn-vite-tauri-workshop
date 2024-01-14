@@ -1,7 +1,7 @@
-import { join } from "node:path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { prepareTamaguiVitePlugins } from "package--elements/vite";
+import { resolveAliasesFactory } from "config--vite";
 import vike from "vike/plugin";
 
 const tamaguiVitePlugins = prepareTamaguiVitePlugins({
@@ -20,21 +20,13 @@ export default defineConfig({
 
   plugins: [react(), ...tamaguiVitePlugins, vike()],
 
+  server: {
+    host: true,
+    port: 3000,
+  },
+
   resolve: {
-    alias: [
-      {
-        find: /^#styles\//,
-        replacement: join(__dirname, "src/styles/"),
-      },
-      {
-        find: /^#layouts\//,
-        replacement: join(__dirname, "src/components/layouts/"),
-      },
-      {
-        find: /^#\//,
-        replacement: `${__dirname}/`,
-      },
-    ],
+    alias: resolveAliasesFactory(__dirname),
   },
 
   ssr: {

@@ -6476,6 +6476,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"config--vite@workspace:^, config--vite@workspace:src/configs/vite":
+  version: 0.0.0-use.local
+  resolution: "config--vite@workspace:src/configs/vite"
+  peerDependencies:
+    vite: 5.0.11
+  languageName: unknown
+  linkType: soft
+
 "connect@npm:^3.6.5":
   version: 3.7.0
   resolution: "connect@npm:3.7.0"
@@ -12614,6 +12622,7 @@ __metadata:
     "@vitejs/plugin-react": "npm:^4.2.1"
     config--eslint: "workspace:^"
     config--typescript: "workspace:^"
+    config--vite: "workspace:^"
     eslint: "npm:^8.56.0"
     eslint-plugin-react-hooks: "npm:^4.6.0"
     eslint-plugin-react-refresh: "npm:^0.4.5"
@@ -12641,6 +12650,7 @@ __metadata:
     "@vitejs/plugin-react": "npm:^4.2.1"
     config--eslint: "workspace:^"
     config--typescript: "workspace:^"
+    config--vite: "workspace:^"
     eslint: "npm:^8.56.0"
     package--elements: "workspace:^"
     package--xp-app: "workspace:^"
@@ -12668,6 +12678,7 @@ __metadata:
     "@vitejs/plugin-react": "npm:^4.2.1"
     config--eslint: "workspace:^"
     config--typescript: "workspace:^"
+    config--vite: "workspace:^"
     eslint: "npm:^8.56.0"
     package--elements: "workspace:^"
     package--url-parser: "workspace:^"

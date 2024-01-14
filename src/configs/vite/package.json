@@ -1,0 +1,18 @@
+{
+  "name": "config--vite",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "types": "./src/exports/esm.d.mts",
+  "exports": {
+    ".": {
+      "import": "./src/exports/esm.mjs"
+    }
+  },
+  "scripts": {
+    "upgrade-all-packages": "yarn-upgrade-all"
+  },
+  "peerDependencies": {
+    "vite": "5.0.11"
+  }
+}

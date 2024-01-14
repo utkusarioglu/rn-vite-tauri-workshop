@@ -29,6 +29,7 @@
     "@vitejs/plugin-react": "^4.2.1",
     "config--eslint": "workspace:^",
     "config--typescript": "workspace:^",
+    "config--vite": "workspace:^",
     "eslint": "^8.56.0",
     "typescript": "^5.3.3",
     "vike": "^0.4.156",
