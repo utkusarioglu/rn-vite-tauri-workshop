@@ -6501,6 +6501,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"config--jest@workspace:^, config--jest@workspace:src/configs/jest":
+  version: 0.0.0-use.local
+  resolution: "config--jest@workspace:src/configs/jest"
+  peerDependencies:
+    jest: 29.7.0
+    ts-jest: 29.1.1
+  languageName: unknown
+  linkType: soft
+
 "config--typescript@workspace:^, config--typescript@workspace:src/configs/typescript":
   version: 0.0.0-use.local
   resolution: "config--typescript@workspace:src/configs/typescript"
@@ -10875,10 +10884,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "package--url-parser@workspace:src/packages/url-parser"
   dependencies:
-    "@babel/preset-typescript": "npm:^7.23.3"
-    "@jest/globals": "npm:^29.7.0"
     "@types/jest": "npm:^29.5.11"
     config--eslint: "workspace:^"
+    config--jest: "workspace:^"
     config--typescript: "workspace:^"
     eslint: "npm:^8.56.0"
     jest: "npm:^29.7.0"
@@ -10911,8 +10919,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "package--xp-navigation@workspace:src/packages/xp-navigation"
   dependencies:
-    "@babel/preset-typescript": "npm:^7.23.3"
-    "@jest/globals": "npm:^29.7.0"
     config--eslint: "workspace:^"
     config--typescript: "workspace:^"
     eslint: "npm:^8.56.0"

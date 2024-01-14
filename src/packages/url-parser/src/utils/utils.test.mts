@@ -1,5 +1,5 @@
-// import { jest } from "@jest/globals";
-
-test("a", () => {
-  expect(false).toBe(false);
+describe("things", () => {
+  test("a", () => {
+    expect(true).toBe(true);
+  });
 });
