@@ -30,6 +30,10 @@ export default defineConfig({
         replacement: join(__dirname, "src/components/hocs/"),
       },
       {
+        find: /^#layouts\//,
+        replacement: join(__dirname, "src/components/layouts/"),
+      },
+      {
         find: /^#screens/,
         replacement: join(__dirname, "src/components/screens/"),
       },

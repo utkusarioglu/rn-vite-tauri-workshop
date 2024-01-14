@@ -13,7 +13,8 @@
         "vscjava.vscode-java-pack",
         "esbenp.prettier-vscode",
         "ms-azuretools.vscode-docker",
-        "vscjava.vscode-gradle"
+        "vscjava.vscode-gradle",
+        "formulahendry.auto-rename-tag"
       ],
       "settings": {
         "workbench.colorCustomizations": {

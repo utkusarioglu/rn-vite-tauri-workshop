@@ -1,10 +1,10 @@
 import type { FC, PropsWithChildren } from "react";
 
-interface PageLayoutProps {
+interface ScreenLayoutProps {
   pageContext: any;
 }
 
-export const PageLayout: FC<PropsWithChildren<PageLayoutProps>> = ({
+export const ScreenLayout: FC<PropsWithChildren<ScreenLayoutProps>> = ({
   children,
   // pageContext,
 }) => {
@@ -12,7 +12,7 @@ export const PageLayout: FC<PropsWithChildren<PageLayoutProps>> = ({
   return (
     <>
       {children}
-      <div style={{ textAlign: "center" }}>- end of page -</div>
+      <div style={{ textAlign: "center", color: "#333333" }}>SSR</div>
     </>
   );
 };

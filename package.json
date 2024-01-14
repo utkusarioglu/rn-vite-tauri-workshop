@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev",
+    "dev": "turbo run dev --filter='target--*'",
     "dev:no-telemetry": "turbo run dev:no-telemetry",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md,mts,cjs,js}\"",

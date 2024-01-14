@@ -3,7 +3,7 @@ import "#styles/index.css";
 import type { FC } from "react";
 import ssrTamaguiConfig from "#/tamagui.config.mts";
 import { ElementsProvider } from "package--elements";
-import { PageLayout } from "./PageLayout.tsx";
+import { ScreenLayout } from "#layouts/screen/Screen.layout.tsx";
 
 interface ThemedAppProps {
   pageContext: any;
@@ -22,8 +22,8 @@ export const ThemedApp: FC<ThemedAppProps> = ({
     disableInjectCSS
     disableRootThemeClass
   >
-    <PageLayout pageContext={pageContext}>
+    <ScreenLayout pageContext={pageContext}>
       <pageContext.Page {...pageProps} />
-    </PageLayout>
+    </ScreenLayout>
   </ElementsProvider>
 );

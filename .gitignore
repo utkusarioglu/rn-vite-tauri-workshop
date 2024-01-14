@@ -49,3 +49,5 @@ apps/*/.certs
 .certs.*
 
 */*/*/tsconfig.tsbuildinfo
+
+*/*/*/core.*

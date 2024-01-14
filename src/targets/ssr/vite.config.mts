@@ -27,6 +27,10 @@ export default defineConfig({
         replacement: join(__dirname, "src/styles/"),
       },
       {
+        find: /^#layouts\//,
+        replacement: join(__dirname, "src/components/layouts/"),
+      },
+      {
         find: /^#\//,
         replacement: `${__dirname}/`,
       },
