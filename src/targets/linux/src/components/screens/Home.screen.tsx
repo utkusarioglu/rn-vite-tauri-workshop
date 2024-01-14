@@ -1,8 +1,4 @@
 import { HomeScreen } from "package--xp-app/screens";
-import { ScreenWrapper } from "#wrappers/Screen.wrapper.tsx";
+import { screenHoc } from "#hocs/Screen.hoc.tsx";
 
-export const LinuxHomeScreen = () => (
-  <ScreenWrapper>
-    <HomeScreen />
-  </ScreenWrapper>
-);
+export const LinuxHomeScreen = screenHoc(HomeScreen);

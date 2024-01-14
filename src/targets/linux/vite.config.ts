@@ -50,8 +50,8 @@ export default defineConfig({
         replacement: join(__dirname, "src/styles/"),
       },
       {
-        find: /^#wrappers\//,
-        replacement: join(__dirname, "src/components/wrappers/"),
+        find: /^#hocs\//,
+        replacement: join(__dirname, "src/components/hocs/"),
       },
       {
         find: /^#screens/,

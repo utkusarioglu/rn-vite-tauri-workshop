@@ -1,8 +1,6 @@
 import { CounterScreen } from "package--xp-app/screens";
-import { ScreenWrapper } from "#wrappers/Screen.wrapper.tsx";
+import { screenHoc } from "#hocs/Screen.hoc.tsx";
 
-export const LinuxCounterScreen = () => (
-  <ScreenWrapper>
-    <CounterScreen />
-  </ScreenWrapper>
-);
+export const LinuxCounterScreen = screenHoc((props) => (
+  <CounterScreen {...props} />
+));

@@ -53,10 +53,11 @@ export function parseHash<T extends { hash?: string }>(
   rawHash: string,
   onConflict: ConflictHandlingMethods,
 ): string | undefined {
-  if (rawParams.hash && rawHash) {
+  const rawParamsHash = rawParams && rawParams.hash;
+  if (rawParamsHash && rawHash) {
     handleConflict("Hash defined twice", onConflict);
   }
-  const hash = rawHash || rawParams.hash;
+  const hash = rawHash || rawParamsHash;
   return hash && hash.replace(/^#/, "");
 }
 

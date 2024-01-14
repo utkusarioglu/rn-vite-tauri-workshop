@@ -5,7 +5,9 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./src/exports.mts"
+      "import": "./src/exports/default.exports.mts",
+      "browser": "./src/exports/default.exports.mts",
+      "react-native": "./src/exports/react-native.exports.mts"
     }
   },
   "devDependencies": {

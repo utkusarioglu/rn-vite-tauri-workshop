@@ -15,9 +15,10 @@ export function browserPathTransformer<T extends Record<string, string>>(
     delete rawParams.hash;
   }
 
-  Object.entries(rawParams).forEach(([key, value]) => {
-    url.searchParams.set(key, value);
-  });
+  rawParams &&
+    Object.entries(rawParams).forEach(([key, value]) => {
+      url.searchParams.set(key, value);
+    });
 
   return {
     path: url.pathname + url.search + url.hash,

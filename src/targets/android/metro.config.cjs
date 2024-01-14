@@ -39,11 +39,15 @@ const config = {
   watchFolders: [appRoot, nodeModulesPath, packagesRoot],
 
   resolver: {
-    sourceExts: ["js", "jsx", "json", "ts", "tsx", "mts", "mjs", "cjs"],
+    sourceExts: ["mts", "tsx", "ts", "mjs", "cjs", "jsx", "js", "json"],
 
     unstable_enablePackageExports: true,
-    // unstable_conditionNames: ["react-native", "import", "require"],
-    // unstable_conditionNames: ["react-native", "require", "import"],
+    // TODO be on the watchout for this. it doesn't currently work but it would
+    // simplify development tremendously. packages/url-parser is waiting for
+    // this to become stable so it can use "react-native-url-polyfill"
+    // unstable_conditionsByPlatform: {
+    //   android: new Set(["react-native", "import", "require"]),
+    // },
 
     resolveRequest: (context, moduleName, platform) => {
       for (const alias of PATH_ALIASES) {
