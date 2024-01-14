@@ -34,7 +34,11 @@ export const onRenderClient: OnRenderClientAsync = async (
   }
 
   const props = {
-    ...parseSearchParams(pageProps, new URLSearchParams(searchOriginal || "")),
+    ...parseSearchParams(
+      pageProps,
+      new URLSearchParams(searchOriginal || ""),
+      "ignore",
+    ),
     hash,
   };
 

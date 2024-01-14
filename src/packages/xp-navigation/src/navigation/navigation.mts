@@ -1,7 +1,6 @@
 import type {
   Handlers,
   PathTransformer,
-  PusherHref,
   PusherOptions,
   Logger,
 } from "./navigation.types.mts";
@@ -38,7 +37,10 @@ export class Navigation {
     return Navigation.pathTransformer;
   }
 
-  static push(rawHref: PusherHref, rawParams?: PusherOptions): void {
+  static push(
+    rawHref: typeof Navigation.handlers.push,
+    rawParams?: PusherOptions,
+  ): void {
     const { path, params } = Navigation.getPathTransformer()(
       rawHref,
       rawParams,

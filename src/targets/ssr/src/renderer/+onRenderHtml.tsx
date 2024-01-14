@@ -27,6 +27,7 @@ export const onRenderHtml: OnRenderHtmlAsync = async (
   const props = parseSearchParams(
     pageProps,
     new URLSearchParams(searchOriginal || ""),
+    "throw",
   );
 
   const pageHtml = ReactDOMServer.renderToString(
@@ -66,7 +67,8 @@ export const onRenderHtml: OnRenderHtmlAsync = async (
         ...props,
       },
       // bunnies: "yes",
-      // We can add some `pageContext` here, which is useful if we want to do page redirection https://vike.dev/page-redirection
+      // We can add some `pageContext` here, which is useful if we want to do
+      // page redirection https://vike.dev/page-redirection
     },
   };
 };

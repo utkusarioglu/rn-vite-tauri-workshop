@@ -7,7 +7,9 @@ import type {
   StackKeys,
   ScreenProps,
 } from "#navigators/root/Root.navigator.types.mts";
+import type { RootStackParamList } from "#navigators/root/Root.navigator.types.mts";
 
+// TODO this belongs in some config management tool
 const WEB_APP_URL = process.env.WEB_APP_URL;
 
 /**
@@ -16,7 +18,10 @@ const WEB_APP_URL = process.env.WEB_APP_URL;
  */
 // TODO this needs to work with full urls
 Navigation.setPathTransformer(
-  reactNavigationPathTransformerFactory(WEB_APP_URL, "home"),
+  reactNavigationPathTransformerFactory<keyof RootStackParamList>(
+    WEB_APP_URL,
+    "home",
+  ),
 );
 
 type ScreenHoc = <T extends StackKeys>(
@@ -24,8 +29,7 @@ type ScreenHoc = <T extends StackKeys>(
 ) => FC<ScreenProps<T>>;
 
 export const screenHoc: ScreenHoc = (Screen) => (props) => {
-  Navigation.setHandlers({
-    // @ts-expect-error: #1
+  Navigation.setHandlers<keyof RootStackParamList>({
     push: props.navigation.push,
   });
 

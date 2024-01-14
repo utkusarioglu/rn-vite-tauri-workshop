@@ -13,7 +13,7 @@ export const screenHoc: ScreenHoc = (Screen) => () => {
   Navigation.setHandlers({
     push: navigate,
   });
-  const props = parseHref({}, window.location.href);
+  const props = parseHref({}, window.location.href, "throw");
 
   return <Screen {...props} />;
 };

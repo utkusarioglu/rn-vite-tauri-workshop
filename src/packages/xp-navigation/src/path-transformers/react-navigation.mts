@@ -1,9 +1,9 @@
 import type { PathTransformer } from "../navigation/navigation.types.mts";
 import { parseHash, parseSearchParamStr } from "package--url-parser";
 
-export function reactNavigationPathTransformerFactory(
+export function reactNavigationPathTransformerFactory<T extends string>(
   webAppUrl: string,
-  emptyPathAssignment: string,
+  emptyPathAssignment: T,
 ): PathTransformer {
   const reactNavigationPathTransformer: PathTransformer = (
     rawPath,
@@ -14,14 +14,21 @@ export function reactNavigationPathTransformerFactory(
     const [path, searchParamsStr, rawHash] =
       withoutPrecedingSlash.split(/[\?|#]/);
 
-    const hash = parseHash(rawParams, rawHash);
-    const searchParams = parseSearchParamStr(searchParamsStr, rawParams);
+    const hash = parseHash(rawParams, rawHash, "throw");
+    const searchParams = parseSearchParamStr(
+      searchParamsStr,
+      rawParams,
+      "throw",
+    );
 
     const params = {
       ...rawParams,
       ...searchParams,
-      ...{ hash },
     };
+
+    if (hash) {
+      params.hash = hash;
+    }
 
     if (!path.length) {
       return { path: emptyPathAssignment, params };

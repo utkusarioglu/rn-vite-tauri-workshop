@@ -1,22 +1,21 @@
 import type { PathTransformer } from "../navigation/navigation.types.mts";
+import { parseHash } from "package--url-parser";
 
 // TODO remove `any`
-export function browserPathTransformer(
+export function browserPathTransformer<T extends Record<string, string>>(
   rawPath: string,
-  rawParams: any = {},
+  rawParams: T,
 ): ReturnType<PathTransformer> {
   const url = new URL([window.location.origin, rawPath].join(""));
 
-  if (url.hash && rawParams.hash) {
-    // TODO standardize the error
-    throw new Error("Hash defined twice");
-  } else if (!url.hash && rawParams.hash) {
-    url.hash = rawParams.hash;
+  const hash = parseHash(rawParams, url.hash, "throw");
+
+  if (hash) {
+    url.hash = hash;
     delete rawParams.hash;
   }
 
   Object.entries(rawParams).forEach(([key, value]) => {
-    // @ts-expect-error: this needs proper typing as the rest of the function
     url.searchParams.set(key, value);
   });
 

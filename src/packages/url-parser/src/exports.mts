@@ -3,4 +3,4 @@ export {
   parseHash,
   parseHref,
   parseSearchParamStr,
-} from "./parsers.mts";
+} from "./parsers/parsers.mts";

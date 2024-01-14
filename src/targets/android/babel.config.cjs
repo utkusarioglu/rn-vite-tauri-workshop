@@ -1,7 +1,5 @@
 module.exports = {
-  // presets: ["@babel/preset-react"],
-  // presets: ["module:metro-react-native-babel-preset"],
-  // presets: ["@react-native/babel-preset"],
+  presets: ["@babel/preset-typescript"],
   plugins: [
     [
       "@tamagui/babel-plugin",
