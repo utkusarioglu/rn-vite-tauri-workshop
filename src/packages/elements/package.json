@@ -23,8 +23,8 @@
     "upgrade-all-packages": "yarn-upgrade-all"
   },
   "dependencies": {
-    "@tamagui/config": "^1.82.9",
-    "tamagui": "^1.82.9"
+    "@tamagui/config": "^1.86.4",
+    "tamagui": "^1.86.4"
   },
   "peerDependencies": {
     "react": "*",

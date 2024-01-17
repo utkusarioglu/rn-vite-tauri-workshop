@@ -13,6 +13,6 @@
     "upgrade-all-packages": "yarn-upgrade-all"
   },
   "peerDependencies": {
-    "vite": "5.0.11"
+    "vite": "*"
   }
 }

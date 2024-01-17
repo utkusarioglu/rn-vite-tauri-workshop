@@ -39,6 +39,7 @@ const config = {
   watchFolders: [appRoot, nodeModulesPath, packagesRoot],
 
   resolver: {
+    // sourceExts: ["mts", "tsx", "ts", "mjs", "cjs", "jsx", "js", "json"],
     sourceExts: ["mts", "tsx", "ts", "mjs", "cjs", "jsx", "js", "json"],
 
     unstable_enablePackageExports: true,
