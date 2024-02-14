@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { Navigation, browserPathTransformer } from "package--xp-navigation";
-import { parseHref } from "package--url-parser";
+import { parseHrefParamsAsObject } from "package--url-parser";
 
 Navigation.setPathTransformer(browserPathTransformer);
 
@@ -13,7 +13,7 @@ export const screenHoc: ScreenHoc = (Screen) => () => {
   Navigation.setHandlers({
     push: navigate,
   });
-  const props = parseHref({}, window.location.href, "throw");
+  const props = parseHrefParamsAsObject(window.location.href, {}, "throw");
 
   return <Screen {...props} />;
 };

@@ -5,7 +5,7 @@ import type { OnRenderClientAsync } from "vike/types";
 import { Navigation, browserPathTransformer } from "package--xp-navigation";
 import { ThemedApp } from "./ThemedApp.tsx";
 import { NO_PAGE_ERROR, NO_CONTAINER_ERROR } from "#/src/errors.mts";
-import { parseSearchParams } from "package--url-parser";
+import { mergeParams, parseUrlSearchParamsAsObject } from "package--url-parser";
 
 Navigation.setPathTransformer(browserPathTransformer);
 Navigation.setHandlers({
@@ -24,7 +24,7 @@ export const onRenderClient: OnRenderClientAsync = async (
   const {
     Page,
     // @ts-expect-error
-    pageProps,
+    pageProps = {},
     // routeParams,
     urlParsed: { searchOriginal, hash },
   } = pageContext;
@@ -32,15 +32,10 @@ export const onRenderClient: OnRenderClientAsync = async (
   if (!Page) {
     throw new Error(NO_PAGE_ERROR);
   }
-
-  const props = {
-    ...parseSearchParams(
-      pageProps,
-      new URLSearchParams(searchOriginal || ""),
-      "ignore",
-    ),
-    hash,
-  };
+  const searchParams = parseUrlSearchParamsAsObject(
+    new URLSearchParams(searchOriginal || ""),
+  );
+  const props = mergeParams(searchParams, pageProps, hash, "warn");
 
   const container = document.getElementById("react-root");
   if (!container) {

@@ -1,9 +1,5 @@
-import type {
-  Handlers,
-  PathTransformer,
-  PusherOptions,
-  Logger,
-} from "./navigation.types.mts";
+import type { StringNumberBoolean } from "package--url-parser";
+import type { Handlers, PathTransformer, Logger } from "./navigation.types.mts";
 
 export class Navigation {
   static handlers: Handlers = {
@@ -38,8 +34,8 @@ export class Navigation {
   }
 
   static push(
-    rawHref: typeof Navigation.handlers.push,
-    rawParams?: PusherOptions,
+    rawHref: string,
+    rawParams?: Record<string, StringNumberBoolean>,
   ): void {
     const { path, params } = Navigation.getPathTransformer()(
       rawHref,

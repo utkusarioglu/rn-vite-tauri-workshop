@@ -47,19 +47,16 @@ There is some variety in the life cycles and consumption domains of the packages
 Here is a sample package diagram to exemplify one possible structure or the project. Please note that this graph is incomplete as this is a workshop that is in constant flux.
 
 ```mermaid
-flowchart LR
+graph LR
     XpApp ---> Android
     XpApp ---> Linux
     XpApp ---> Spa
-
     Elements --> Views
     Views --> XpApp
-
     Store --> XpApp
     I18n --> XpApp
     Api --> Store
     Web3 --> Store
-
     AndroidSpecific .-> Android
     LinuxSpecific .-> Linux
     SpaSpecific .-> Spa
@@ -80,15 +77,13 @@ Common reasons for target initialization are:
 The graph below uses some common packages to show a possible target initialization graph.
 
 ```mermaid
-flowchart LR
+graph LR
     Elements .-> AppInstance
     I18n .-> AppInstance
     Store .-> AppInstance
-
     Elements --> Views --> XpApp
     I18n --> XpApp
     Store --> XpApp
-
     XpApp ---> AppInstance
 ```
 
@@ -101,12 +96,11 @@ Dashed lines are for initialization targets while solid lines overlay the depend
 There is a lot of commonality in the configuration of packages and apps, to keep the code dry, this monorepo uses configuration packages to capture common properties. Admittedly, this does increase the complexity of the repo a bit. But we decided to lean on dryness to aid uniformity in this repo.
 
 ```mermaid
-flowchart LR
+graph LR
     Tsconfig .-> Elements
     Tsconfig .-> I18n
     Tsconfig .-> Store
     Tsconfig .-> AppInstance
-
     Elements --> AppInstance
     I18n --> AppInstance
     Store --> AppInstance

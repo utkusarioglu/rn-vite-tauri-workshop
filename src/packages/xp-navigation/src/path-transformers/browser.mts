@@ -1,27 +1,27 @@
 import type { PathTransformer } from "../navigation/navigation.types.mts";
-import { parseHash } from "package--url-parser";
+import {
+  parseHash,
+  mergeParams,
+  parseUrlSearchParamsAsObject,
+  stringifyParams,
+  type StringNumberBoolean,
+} from "package--url-parser";
 
-// TODO remove `any`
-export function browserPathTransformer<T extends Record<string, string>>(
-  rawPath: string,
-  rawParams: T,
-): ReturnType<PathTransformer> {
+export function browserPathTransformer<
+  T extends Record<string, StringNumberBoolean>,
+>(rawPath: string, rawParams?: T): ReturnType<PathTransformer> {
+  const additionalParams = rawParams || {};
   const url = new URL([window.location.origin, rawPath].join(""));
+  const hash = parseHash(url.hash);
+  const searchParams = parseUrlSearchParamsAsObject(url.searchParams);
+  const params = mergeParams(searchParams, additionalParams, hash, "warn");
+  const searchParamStr = stringifyParams(params);
+  const path = url.pathname + searchParamStr + url.hash;
 
-  const hash = parseHash(rawParams, url.hash, "throw");
-
-  if (hash) {
-    url.hash = hash;
-    delete rawParams.hash;
-  }
-
-  rawParams &&
-    Object.entries(rawParams).forEach(([key, value]) => {
-      url.searchParams.set(key, value);
-    });
+  console.log({ path, params, searchParams });
 
   return {
-    path: url.pathname + url.search + url.hash,
-    params: rawParams,
+    path,
+    params,
   };
 }

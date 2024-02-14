@@ -15,12 +15,16 @@
     "clean:dependencies": "scripts/clean/dependencies.sh",
     "clean:artifacts": "scripts/clean/artifacts.sh",
     "clean": "yarn clean:artifacts && yarn clean:dependencies",
-    "upgrade-all-packages": "turbo run upgrade-all-packages --concurrency 1"
+    "packages:upgrade-all": "turbo run upgrade-all-packages --concurrency 1",
+    "docs:create-all": "typedoc"
   },
   "devDependencies": {
     "eslint": "^8.56.0",
     "prettier": "^3.1.1",
     "turbo": "^1.11.3",
+    "typedoc": "^0.25.7",
+    "typedoc-plugin-mermaid": "^1.10.0",
+    "typedoc-plugin-missing-exports": "^2.2.0",
     "yarn-upgrade-all": "^0.7.2"
   }
 }

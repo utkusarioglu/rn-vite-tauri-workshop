@@ -1,5 +1,9 @@
 import type { PathTransformer } from "../navigation/navigation.types.mts";
-import { parseHash, parseSearchParamStr } from "package--url-parser";
+import {
+  parseHash,
+  parseUrlSearchParamStrAsObject,
+  mergeParams,
+} from "package--url-parser";
 
 export function reactNavigationPathTransformerFactory<T extends string>(
   webAppUrl: string,
@@ -11,33 +15,15 @@ export function reactNavigationPathTransformerFactory<T extends string>(
   ) => {
     let withoutOrigin = rawPath.replace(webAppUrl, "");
     const withoutPrecedingSlash = withoutOrigin.replace(/^\//, "");
-    const [path, searchParamsStr, rawHash] =
+    const [urlPath, searchParamsStr, rawHash] =
       withoutPrecedingSlash.split(/[\?|#]/);
 
-    const hash = parseHash(rawParams, rawHash, "throw");
-    const searchParams = parseSearchParamStr(
-      searchParamsStr,
-      rawParams,
-      "throw",
-    );
+    const hash = parseHash(rawHash);
+    const searchParams = parseUrlSearchParamStrAsObject(searchParamsStr);
+    const params = mergeParams(searchParams, rawParams, hash, "throw");
+    const path = !urlPath.length ? emptyPathAssignment : urlPath;
 
-    const params = {
-      ...rawParams,
-      ...searchParams,
-    };
-
-    if (hash) {
-      params.hash = hash;
-    }
-
-    if (!path.length) {
-      return { path: emptyPathAssignment, params };
-    }
-
-    return {
-      path,
-      params,
-    };
+    return { path, params };
   };
 
   return reactNavigationPathTransformer;

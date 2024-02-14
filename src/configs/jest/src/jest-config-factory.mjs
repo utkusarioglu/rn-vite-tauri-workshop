@@ -10,6 +10,7 @@ export const jestConfigFactory = (tsConfig) =>
       {
         useESM: true,
         prefix: "<rootDir>",
+        isolatedModules: true,
       },
     ),
     testMatch: [
@@ -22,6 +23,12 @@ export const jestConfigFactory = (tsConfig) =>
         "ts-jest",
         {
           useESM: true,
+          isolatedModules: true,
+          tsconfig: {
+            // HACK
+            // https://github.com/kulshekhar/ts-jest/issues/4198
+            moduleResolution: "classic",
+          },
         },
       ],
     },

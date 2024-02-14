@@ -49,6 +49,7 @@ const config = {
     // unstable_conditionsByPlatform: {
     //   android: new Set(["react-native", "import", "require"]),
     // },
+    unstable_conditionNames: ["react-native", "import", "require"],
 
     resolveRequest: (context, moduleName, platform) => {
       for (const alias of PATH_ALIASES) {

@@ -4,7 +4,7 @@ import type { OnRenderHtmlAsync } from "vike/types";
 import ssrTamaguiConfig from "#/tamagui.config.mts";
 import { ThemedApp } from "./ThemedApp.tsx";
 import { NO_PAGE_ERROR } from "#/src/errors.mts";
-import { parseSearchParams } from "package--url-parser";
+import { parseUrlSearchParamsAsObject } from "package--url-parser";
 
 /**
  * @dev
@@ -24,10 +24,8 @@ export const onRenderHtml: OnRenderHtmlAsync = async (
     throw new Error(NO_PAGE_ERROR);
   }
 
-  const props = parseSearchParams(
-    pageProps,
+  const props = parseUrlSearchParamsAsObject(
     new URLSearchParams(searchOriginal || ""),
-    "throw",
   );
 
   const pageHtml = ReactDOMServer.renderToString(
