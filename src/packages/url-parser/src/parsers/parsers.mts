@@ -3,6 +3,7 @@ import type {
   ConflictHandlingMethods,
 } from "./parsers.types.mts";
 import { mergeParams, convertValueType } from "../utils/utils.mts";
+import { ERRORS } from "../errors.mts";
 
 /**
  * Parses url search param string as a param object.
@@ -19,6 +20,7 @@ import { mergeParams, convertValueType } from "../utils/utils.mts";
  *   searchParamsStr:
  *     Illegal:
  *       undefined & null:
+ *        Spaces:
  *       `&` at wrong places:
  *           # leads to ub for key, value pairs.
  *         - Consecutive occurrence of `&`
@@ -34,7 +36,7 @@ import { mergeParams, convertValueType } from "../utils/utils.mts";
  *         Stringified numbers:
  *         Strings:
  *         Stringified booleans:
- *       Multiple Params:
+ *       Multiple params:
  * ```
  */
 export function parseUrlSearchParamStrAsObject<
@@ -47,6 +49,21 @@ export function parseUrlSearchParamStrAsObject<
 
   return searchParamsStr.split("&").reduce(
     (acc, entry) => {
+      if (!entry.length) {
+        throw new Error(ERRORS.ZERO_LENGTH_ENTRY);
+      }
+      const spaceMatches = entry.match(/\s/g);
+      if (spaceMatches) {
+        throw new Error(ERRORS.NO_SPACE_ALLOWED);
+      }
+      const equalMatches = entry.match(/=/g);
+      if (equalMatches) {
+        if (equalMatches.length > 1) {
+          throw new Error(ERRORS.MULTIPLE_ASSIGNMENTS);
+        } else if (equalMatches.length === 0) {
+          throw new Error(ERRORS.ASSIGNMENT_REQUIRED);
+        }
+      }
       const [key, value] = entry.split("=");
       acc[key] = convertValueType(value);
       return acc;
