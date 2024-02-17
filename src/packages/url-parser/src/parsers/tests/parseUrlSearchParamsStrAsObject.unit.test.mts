@@ -44,7 +44,7 @@ describe("Illegal", () => {
     ].forEach((searchParamsStr) => {
       it(searchParamsStr, () => {
         expect(() => parseUrlSearchParamStrAsObject(searchParamsStr)).toThrow(
-          ERRORS.MULTIPLE_ASSIGNMENTS,
+          ERRORS.MALFORMED_INPUT,
         );
       });
     });

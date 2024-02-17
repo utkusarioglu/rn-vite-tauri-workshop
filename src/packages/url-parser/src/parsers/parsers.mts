@@ -13,7 +13,7 @@ import { ERRORS } from "../errors.mts";
  * @returns Url search string params parsed as a JS object.
  *
  * @dev
- * TODO tests are incomplete, Illegal tests are not implemented
+ * TODO current implementation does parse url encoding.
  *
  * @testCases ```yaml
  * args:
@@ -59,7 +59,7 @@ export function parseUrlSearchParamStrAsObject<
       const equalMatches = entry.match(/=/g);
       if (equalMatches) {
         if (equalMatches.length > 1) {
-          throw new Error(ERRORS.MULTIPLE_ASSIGNMENTS);
+          throw new Error(ERRORS.MALFORMED_INPUT);
         } else if (equalMatches.length === 0) {
           throw new Error(ERRORS.ASSIGNMENT_REQUIRED);
         }
@@ -80,6 +80,18 @@ export function parseUrlSearchParamStrAsObject<
  * @dev
  * Please refer to {@link convertValueType} for details about the value
  * conversion logic.
+ *
+ * @testCases ```yaml
+ * args:
+ *   urlSearchParams:
+ *     Legal:
+ *       Empty Object:
+ *       # Checks if `convertValueType` is called as expected
+ *       Single Param:
+ *       # Checks if all keys in the URLSearchParams object is present in the
+ *       # returned generic object.
+ *       Multiple Params:
+ * ```
  */
 export function parseUrlSearchParamsAsObject<
   T extends Record<string, StringNumberBoolean>,
@@ -104,20 +116,41 @@ export function parseUrlSearchParamsAsObject<
  * before consumption in the future.
  *
  * @dev
- * This method uses the {@link URL} api in browsers. React Native doesn't have
- * this api fully implemented by default.
+ * TODO current implementation does parse url encoding.
  *
- * TODO current implementation does not check for multiple appearances of "#"
- * in the string. This may be cause for trouble in the future.
- *
- * TODO current implementation does not check for any characters that aren't
- * allows by url specs, this may be a cause for concern.
+ * @testCases
+ * rawHash:
+ *   Illegal:
+ *     Types other than strings:
+ *     Strings with multiple pounds:
+ *     Strings with spaces:
+ *   Legal:
+ *     Empty params:
+ *       Undefined & Null & Empty String:
+ *       String-Like:
+ *       - Pound string
+ *     Strings:
+ *       With Pound:
+ *       Without Pound:
  */
 export function parseHash(
   rawHash: string | undefined | null,
 ): string | undefined {
-  if (!rawHash || rawHash.length === 0) {
+  if (rawHash === undefined || rawHash === null) {
     return undefined;
+  }
+  if (typeof rawHash !== "string") {
+    throw new Error(ERRORS.UNSUPPORTED_TYPE);
+  }
+  if (rawHash.length === 0) {
+    return undefined;
+  }
+  const poundCount = (rawHash.match(/#/g) || []).length;
+  if (poundCount > 1) {
+    throw new Error(ERRORS.MALFORMED_INPUT);
+  }
+  if (rawHash.match(/\s/g)) {
+    throw new Error(ERRORS.NO_SPACE_ALLOWED);
   }
   return rawHash.replace(/^#/, "");
 }
@@ -126,9 +159,11 @@ export function parseHash(
  * Parses the url search params of a string url as a js object
  *
  * @param href Url string
+ *
  * @param additionalParams additional parameters given to the navigation provider.
  * @param onConflict enum for deciding what to do if there are conflicting keys
  * between url params and additional params.
+ *
  * @returns Parameters parsed as a js object.
  */
 export function parseHrefParamsAsObject<

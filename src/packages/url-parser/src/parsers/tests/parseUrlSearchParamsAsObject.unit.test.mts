@@ -1,100 +1,131 @@
 import { parseUrlSearchParamsAsObject } from "../parsers.mts";
+import * as Utils from "../../utils/utils.mts";
 
-const PARSE_URL_SEARCH_PARAMS_AS_OBJECT_CASES = [
-  {
-    describeTitle: "Empty",
-    tests: [
-      {
-        testTitle: "Empty",
-        input: {},
-        expected: {},
-      },
-    ],
-  },
-  {
-    describeTitle: "Single Param",
-    tests: [
-      {
-        testTitle: "String",
-        input: {
-          param1: "one",
-        },
-        expected: {
-          param1: "one",
-        },
-      },
-      {
-        testTitle: "Number",
-        input: {
-          param1: 1,
-        },
-        expected: {
-          param1: 1,
-        },
-      },
-      {
-        testTitle: "Boolean",
-        input: {
-          param1: true,
-        },
-        expected: {
-          param1: true,
-        },
-      },
-    ],
-  },
-  {
-    describeTitle: "Multiple Param",
-    tests: [
-      {
-        testTitle: "String & Number",
-        input: {
-          param1: "one",
-          param2: 2,
-        },
-        expected: {
-          param1: "one",
-          param2: 2,
-        },
-      },
-      {
-        testTitle: "Number & Boolean",
-        input: {
-          param1: 1,
-          param2: false,
-        },
-        expected: {
-          param1: 1,
-          param2: false,
-        },
-      },
-      {
-        testTitle: "Boolean & String",
-        input: {
-          param1: true,
-          param2: "hello",
-        },
-        expected: {
-          param1: true,
-          param2: "hello",
-        },
-      },
-    ],
-  },
-];
+describe("Legal", () => {
+  let mockConvertValueType: jest.SpyInstance;
 
-describe(parseUrlSearchParamsAsObject.name, () => {
-  Object.values(PARSE_URL_SEARCH_PARAMS_AS_OBJECT_CASES).forEach(
-    ({ describeTitle, tests }) => {
-      describe(describeTitle, () => {
-        tests.forEach(({ input, expected, testTitle }) => {
-          const searchParams = new URLSearchParams(input);
-          it(testTitle, () => {
-            const response = parseUrlSearchParamsAsObject(searchParams);
-            expect(response).toEqual(expected);
-          });
+  beforeEach(() => {
+    mockConvertValueType = jest.spyOn(Utils, "convertValueType");
+  });
+
+  afterEach(() => {
+    mockConvertValueType.mockClear();
+  });
+
+  it("Empty Object", () => {
+    const urlSearchParams = new URLSearchParams({});
+    const response = parseUrlSearchParamsAsObject(urlSearchParams);
+    expect(response).toEqual({});
+  });
+
+  describe("Single Param", () => {
+    [
+      {
+        params: {
+          param: "hello",
+        },
+        expected: {
+          param: "hello",
+        },
+      },
+      {
+        params: {
+          param: "100",
+        },
+        expected: {
+          param: 100,
+        },
+      },
+      {
+        params: {
+          param: "true",
+        },
+        expected: {
+          param: true,
+        },
+      },
+    ].forEach(({ params, expected }) => {
+      it(JSON.stringify(expected), () => {
+        const args = new URLSearchParams(params);
+        const response = parseUrlSearchParamsAsObject(args);
+
+        expect(response).toEqual(expected);
+        expect(mockConvertValueType).toHaveBeenCalledTimes(1);
+        expect(mockConvertValueType).toHaveBeenCalledWith(params.param);
+        expect(mockConvertValueType).toHaveReturnedWith(expected.param);
+      });
+    });
+  });
+
+  describe("Multiple Params", () => {
+    [
+      {
+        params: {
+          param1: "string",
+          param2: "100",
+        },
+        expected: {
+          param1: "string",
+          param2: 100,
+        },
+      },
+      {
+        params: {
+          param1: "string",
+          param3: "false",
+        },
+        expected: {
+          param1: "string",
+          param3: false,
+        },
+      },
+      {
+        params: {
+          one: "1",
+          two: "2",
+          three: "5",
+        },
+        expected: {
+          one: 1,
+          two: 2,
+          three: 5,
+        },
+      },
+      {
+        params: {
+          cats: "dogs",
+          livingTogether: "mass hysteria",
+          "10": "11",
+          hello: "world",
+          truthsAre: "false",
+        },
+        expected: {
+          cats: "dogs",
+          livingTogether: "mass hysteria",
+          "10": 11,
+          hello: "world",
+          truthsAre: false,
+        },
+      },
+    ].forEach(({ params, expected }) => {
+      const description = Object.keys(params).length + " keys";
+      it(description, () => {
+        const args = new URLSearchParams(params as any);
+        const response = parseUrlSearchParamsAsObject(args);
+
+        expect(response).toEqual(expected);
+        expect(mockConvertValueType).toHaveBeenCalledTimes(
+          Object.keys(expected).length,
+        );
+
+        Object.values(params).forEach((value) => {
+          expect(mockConvertValueType).toHaveBeenCalledWith(value);
+        });
+
+        Object.values(expected).forEach((returned) => {
+          expect(mockConvertValueType).toHaveReturnedWith(returned);
         });
       });
-    },
-  );
+    });
+  });
 });
