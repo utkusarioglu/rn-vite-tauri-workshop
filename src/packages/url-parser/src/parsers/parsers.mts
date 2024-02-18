@@ -2,7 +2,11 @@ import type {
   StringNumberBoolean,
   ConflictHandlingMethods,
 } from "./parsers.types.mts";
-import { mergeParams, convertValueType } from "../utils/utils.mts";
+import {
+  mergeParams,
+  convertValueType,
+  isGenericObject,
+} from "../utils/utils.mts";
 import { ERRORS } from "../errors.mts";
 
 /**
@@ -159,12 +163,15 @@ export function parseHash(
  * Parses the url search params of a string url as a js object
  *
  * @param href Url string
- *
  * @param additionalParams additional parameters given to the navigation provider.
  * @param onConflict enum for deciding what to do if there are conflicting keys
  * between url params and additional params.
  *
  * @returns Parameters parsed as a js object.
+ *
+ * @dev
+ * TODO tests written for this method follow the old standard, switch to the
+ * new standard.
  */
 export function parseHrefParamsAsObject<
   T extends Record<string, StringNumberBoolean>,
@@ -178,14 +185,43 @@ export function parseHrefParamsAsObject<
 }
 
 /**
- * Stringifies Params Js object.
+ * Stringifies Params Js object as url search param encoding
  *
  * @param params Params as a js object
+ *
  * @returns params stringified in url search params and hash format.
+ *
+ * @dev
+ * This method does not parse special characters in URL encoding. Special
+ * characters are left as they are, note that this is incompatible with
+ * standard url encoding.
+ *
+ * @testCases ```yaml
+ *   params:
+ *     Illegal:
+ *       Types other than generic js objects.
+ *     Legal:
+ *       Empty object:
+ *       Without Hash:
+ *         Object with single property:
+ *         Objects with multiple properties:
+ *       With Hash:
+ *          Object with only hash key:
+ *          Objects with hash and one other property:
+ *          Objects with hash and multiple other properties:
+ * ```
+ *
+ * @notes
+ * 1. This allows `false` and `0` to be viable hashes. Otherwise the code to
+ * check for all allowed values gets much longer.
  */
 export function stringifyParams(
   params: Record<string, StringNumberBoolean>,
 ): string {
+  if (!isGenericObject(params)) {
+    throw new Error(ERRORS.UNSUPPORTED_TYPE);
+  }
+
   const searchParams = Object.entries(params)
     .reduce((acc, [key, value]) => {
       if (key === "hash") {
@@ -209,7 +245,12 @@ export function stringifyParams(
     stringified += searchParams;
   }
 
-  if (params["hash"]) {
+  // #1
+  const isHashViable = [undefined, null, ""].reduce(
+    (acc, curr) => acc && params["hash"] !== curr,
+    true,
+  );
+  if (isHashViable) {
     stringified += "#";
     stringified += params["hash"];
   }

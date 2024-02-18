@@ -205,3 +205,43 @@ export function mergeParams<
 
   return paramsWithoutHash;
 }
+
+/**
+ * Checks if the given argument is a generic js object
+ *
+ * @param params any type of variable
+ *
+ * @returns true if the arg is a generic js object
+ *
+ * @dev
+ * TODO There is probably a better way of deducing whether an object is a
+ * generic js object.
+ *
+ * TODO this method needs its unit tests to be implemented
+ *
+ * @internal
+ *
+ * @testCases ```yaml
+ *   All primitive data types:
+ *     - string
+ *     - number
+ *     - boolean
+ *     - null
+ *     - undefined
+ *     - symbol
+ *     - bigint
+ *   All complex data types:
+ *     - Set
+ *     - Map
+ *     - Date
+ * ```
+ */
+export function isGenericObject(params: any): boolean {
+  if (Object(params) !== params) {
+    return false;
+  }
+  if ([Set, Array, Map].map((t) => params instanceof t).some((i) => i)) {
+    return false;
+  }
+  return true;
+}
