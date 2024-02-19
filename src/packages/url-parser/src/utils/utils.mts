@@ -222,25 +222,30 @@ export function mergeParams<
  * @internal
  *
  * @testCases ```yaml
- *   All primitive data types:
- *     - string
- *     - number
- *     - boolean
- *     - null
- *     - undefined
- *     - symbol
- *     - bigint
- *   All complex data types:
- *     - Set
- *     - Map
- *     - Date
+ *   Primitive types:
+ *     - Null & Undefined:
+ *     - Strings:
+ *     - Numbers:
+ *     - Booleans:
+ *     - Symbols:
+ *     - BigInts:
+ *   Complex types:
+ *     - Sets:
+ *     - Maps:
+ *     - Dates:
+ *     - Generic Objects:
  * ```
+ *
+ * @notes
+ * 1. `Object(params)` check doesn't catch sets, arrays and maps. This block
+ * catches these types.
  */
 export function isGenericObject(params: any): boolean {
   if (Object(params) !== params) {
     return false;
   }
-  if ([Set, Array, Map].map((t) => params instanceof t).some((i) => i)) {
+  // #1
+  if ([Set, Array, Map, Date].map((t) => params instanceof t).some((i) => i)) {
     return false;
   }
   return true;

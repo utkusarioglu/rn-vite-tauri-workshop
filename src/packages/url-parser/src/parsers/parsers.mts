@@ -17,7 +17,7 @@ import { ERRORS } from "../errors.mts";
  * @returns Url search string params parsed as a JS object.
  *
  * @dev
- * TODO current implementation does parse url encoding.
+ * TODO current implementation does not parse url encoding.
  *
  * @testCases ```yaml
  * args:
@@ -120,7 +120,7 @@ export function parseUrlSearchParamsAsObject<
  * before consumption in the future.
  *
  * @dev
- * TODO current implementation does parse url encoding.
+ * TODO current implementation does not parse url encoding.
  *
  * @testCases
  * rawHash:
