@@ -1,5 +1,5 @@
 import { convertValueType } from "../utils.mts";
-import { ERRORS } from "../../errors.mts";
+import { ERRORS } from "../../messages.mts";
 
 describe("1. Illegal Inputs", () => {
   [

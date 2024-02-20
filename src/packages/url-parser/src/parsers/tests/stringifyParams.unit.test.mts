@@ -1,4 +1,4 @@
-import { ERRORS } from "../../errors.mts";
+import { ERRORS } from "../../messages.mts";
 import { stringifyParams } from "../parsers.mts";
 
 describe("Illegal", () => {

@@ -2,7 +2,7 @@ import type {
   ConflictHandlingMethods,
   StringNumberBoolean,
 } from "../parsers/parsers.types.mts";
-import { ERRORS, LOGS } from "../errors.mts";
+import { ERRORS, LOGS } from "../messages.mts";
 
 /**
  * @internal
@@ -10,7 +10,7 @@ import { ERRORS, LOGS } from "../errors.mts";
  * Returns true if the given param value is of a numeric type.
  *
  * @param val Value to check.
- * @returns A boolean, true if the input is convertible to a number.
+ * @returns `true` if the input is convertible to a number.
  *
  * @remarks
  * This function is inspired by its RxJs counterpart.
@@ -153,17 +153,15 @@ export function handleConflict(
 }
 
 /**
- * Merges the following values into one object:
- * 1. Url search params: These are params retrieved from url string
- * 2. Params given to the navigation method as an object
- * 3. Hash value of the url string or the param object given to the navigation
+ * Merges the given arguments as a generic js object. Allows customization of
+ * behavior in case there are key collisions amongst the merged objects.
  *
  * @param searchParams Search params parsed by {@link parseUrlSearchParamStrAsObject}
  * @param additionalParams additional params given to the navigation provider.
  * @param hash hash string or undefined
  * @param onConflict Enum for how to handle any key conflicts.
  *
- * @returns merged params as JS object
+ * @returns merged params as a generic js object
  *
  * @testCases ```yaml
  * args:
@@ -217,23 +215,21 @@ export function mergeParams<
  * TODO There is probably a better way of deducing whether an object is a
  * generic js object.
  *
- * TODO this method needs its unit tests to be implemented
- *
  * @internal
  *
  * @testCases ```yaml
  *   Primitive types:
- *     - Null & Undefined:
- *     - Strings:
- *     - Numbers:
- *     - Booleans:
- *     - Symbols:
- *     - BigInts:
+ *     Null & Undefined:
+ *     Strings:
+ *     Numbers:
+ *     Booleans:
+ *     Symbols:
+ *     BigInts:
  *   Complex types:
- *     - Sets:
- *     - Maps:
- *     - Dates:
- *     - Generic Objects:
+ *     Sets:
+ *     Maps:
+ *     Dates:
+ *     Generic Objects:
  * ```
  *
  * @notes

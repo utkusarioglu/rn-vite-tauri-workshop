@@ -1,6 +1,6 @@
 import { parseUrlSearchParamStrAsObject } from "../parsers.mts";
 import * as Utils from "../../utils/utils.mts";
-import { ERRORS } from "../../errors.mts";
+import { ERRORS } from "../../messages.mts";
 
 describe("Illegal", () => {
   describe("Spaces", () => {

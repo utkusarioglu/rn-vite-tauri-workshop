@@ -5,7 +5,7 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./src/exports.mts"
+      "import": "./src/exports/default.exports.mts"
     }
   },
   "dependencies": {

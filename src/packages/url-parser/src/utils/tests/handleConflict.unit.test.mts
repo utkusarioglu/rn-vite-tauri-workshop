@@ -1,4 +1,4 @@
-import { ERRORS, LOGS } from "../../errors.mts";
+import { ERRORS, LOGS } from "../../messages.mts";
 import { handleConflict } from "../utils.mts";
 
 describe("errorMessage", () => {

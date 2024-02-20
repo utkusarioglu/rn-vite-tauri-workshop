@@ -7,7 +7,7 @@ import {
   convertValueType,
   isGenericObject,
 } from "../utils/utils.mts";
-import { ERRORS } from "../errors.mts";
+import { ERRORS } from "../messages.mts";
 
 /**
  * Parses url search param string as a param object.

@@ -1,4 +1,4 @@
-import { LOGS } from "../../errors.mts";
+import { LOGS } from "../../messages.mts";
 import { mergeParams } from "../utils.mts";
 
 const STRING_PARAMS = [
