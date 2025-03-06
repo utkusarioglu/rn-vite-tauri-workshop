@@ -1,4 +1,4 @@
-import type { PathTransformer } from "../navigation/navigation.types.mts";
+import type { PathTransformer } from "../../navigation/navigation.types.mts";
 import {
   parseHash,
   mergeParams,
@@ -16,6 +16,23 @@ import {
  * @param rawParams Raw parameters received from xp-app
  *
  * @returns Path and params transformed to be used by the target
+ *
+ * @testCases ```yaml
+ * args:
+ *   rawPath:
+ *     Illegal:
+ *       Types other than strings:
+ *       # As this method uses the generic URL class, we don't test sanity
+ *       # checks. If a problem emerges, those can be handled by regression
+ *       # tests.
+ *       Malformed href strings:
+ *   rawParams:
+ *     Illegal:
+ *       Types other than generic js object:
+ *     Legal:
+ *       undefined,
+ *       Generic Js objects:
+ * ```
  */
 export function browserPathTransformer<
   T extends Record<string, StringNumberBoolean>,

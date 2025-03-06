@@ -1,6 +1,6 @@
 export { Navigation } from "../navigation/navigation.mts";
-export { browserPathTransformer } from "../path-transformers/browser.mts";
-export { reactNavigationPathTransformerFactory } from "../path-transformers/react-navigation.mts";
+export { browserPathTransformer } from "../path-transformers/browser/browser.mts";
+export { reactNavigationPathTransformerFactory } from "../path-transformers/react-navigation/react-navigation.mts";
 
 export type {
   PathTransformerReturn,

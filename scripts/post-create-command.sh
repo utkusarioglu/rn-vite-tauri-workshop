@@ -1,5 +1,5 @@
 #!/bin/bash
 
-yarn
+echo y | yarn 
 
-/home/rn/elam/elam.sh repo status
+/home/dev/elam/elam.sh repo status

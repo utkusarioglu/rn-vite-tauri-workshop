@@ -2,7 +2,8 @@ version: "3.9"
 
 services:
   rn-vite-tauri-workshop:
-    image: utkusarioglu/react-native-android-devcontainer:1.0.18
+    # image: utkusarioglu/react-native-android-devcontainer:1.0.18
+    image: utkusarioglu/react-native-android-devcontainer:35-23-ubuntu-test-17
     environment:
       PROJECT_ROOT_ABSPATH: /utkusarioglu-com/workshops/rn-vite-tauri-workshop
       ANDROID_TARGET_DEVICE: 192.168.1.151:58526
@@ -12,6 +13,7 @@ services:
     ports:
       # - 3000:3000
       - 443:443
+      - 3000:3000
       - 5000:5000
     volumes:
       - type: bind

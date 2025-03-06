@@ -1,4 +1,4 @@
-import type { PathTransformer } from "../navigation/navigation.types.mts";
+import type { PathTransformer } from "../../navigation/navigation.types.mts";
 import {
   parseHash,
   parseUrlSearchParamStrAsObject,
